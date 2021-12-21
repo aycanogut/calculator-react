@@ -1,5 +1,13 @@
+import Normalize from 'react-normalize';
+import GlobalStyle from './styles/globalStyles';
+
 function App() {
-  return <div className="App"></div>;
+  return (
+    <>
+      <Normalize />
+      <GlobalStyle />
+    </>
+  );
 }
 
 export default App;
