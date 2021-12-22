@@ -8,20 +8,12 @@
     "ecmaFeatures": {
       "jsx": true
     },
-<<<<<<< HEAD
     "ecmaVersion": "latest",
-=======
-    "ecmaVersion": 13,
->>>>>>> style-config
     "sourceType": "module"
   },
   "plugins": ["react"],
   "rules": {
-<<<<<<< HEAD
-    "react/react-in-jsx-scope": "off"
-=======
     "react/react-in-jsx-scope": "off",
-    "react/prop-types": false
->>>>>>> style-config
+    "react/prop-types": 0
   }
 }
