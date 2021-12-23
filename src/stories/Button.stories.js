@@ -1,12 +1,8 @@
-import Button from '../components/Button/Button';
+import Button from '../components/Button';
+
+export const Red = () => <Button backgroundColor="red">Hello Button</Button>;
 
 export default {
   title: 'Button',
   component: Button
 };
-
-export const Red = () => (
-  <Button label="press me" backgroundColor="red">
-    Hello Button
-  </Button>
-);
