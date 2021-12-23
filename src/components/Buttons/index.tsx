@@ -1,14 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Button from '../Button';
+import { NumberButton, OperatorButton, EqualButton } from '../Button';
 
 const StyledButtons = styled.section``;
 
 const Buttons = () => {
   return (
     <StyledButtons>
-      <Button>0</Button>
+      <NumberButton>1</NumberButton>
+      <OperatorButton>+</OperatorButton>
+      <EqualButton>=</EqualButton>
     </StyledButtons>
   );
 };
