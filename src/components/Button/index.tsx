@@ -1,9 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { applyStyleModifiers } from 'styled-components-modifiers';
 import helpers from '../../styles/helpers';
 
-const StyledButton = styled.button`
+interface IButton {
+  children: string;
+  modifiers?: string;
+}
+
+const Button = ({ children, modifiers, ...props }: { children: string; modifiers?: string }) => {
+  return <StyledButton {...props}>{children}</StyledButton>;
+};
+
+// modifiers
+export const button_modifiers = {
+  number: () => `
+  background-color: ${helpers.color.numberKeys};
+  `,
+  operator: () => `
+  background-color: ${helpers.color.operatorKeys};
+  `,
+  equal: () => `
+  background-color: ${helpers.color.equalKey};
+  `
+};
+
+// button styles
+const StyledButton = styled.button<IButton>`
   display: inline-block;
   padding: 1.4rem 3.4rem;
   color: ${helpers.color.textPrimary};
@@ -14,22 +37,21 @@ const StyledButton = styled.button`
   font-size: ${helpers.typography.fontSize.md};
   font-weight: ${helpers.typography.fontWeight.bold};
   text-decoration: none;
+
+  ${applyStyleModifiers(button_modifiers)};
 `;
 
+// variants
 export const NumberButton = styled(StyledButton)`
-  background-color: ${helpers.color.numberKeys};
+  ${applyStyleModifiers(button_modifiers)};
 `;
 
 export const OperatorButton = styled(StyledButton)`
-  background-color: ${helpers.color.operatorKeys};
+  ${applyStyleModifiers(button_modifiers)};
 `;
 
 export const EqualButton = styled(StyledButton)`
-  background-color: ${helpers.color.equalKey};
+  ${applyStyleModifiers(button_modifiers)};
 `;
-
-const Button = ({ children, ...props }: { children: string }) => {
-  return <StyledButton {...props}>{children}</StyledButton>;
-};
 
 export default Button;
