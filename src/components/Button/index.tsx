@@ -27,7 +27,8 @@ const ButtonComponent = ({ children, variant, ...props }: Props) => {
           transition: 'background-color 0.2s ease-in-out',
 
           '&:hover': {
-            backgroundColor: '#000'
+            backgroundColor: helpers.color.black,
+            transition: 'background-color 0.2s ease-in-out'
           }
         }
       })}
