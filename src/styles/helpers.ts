@@ -32,7 +32,7 @@ const color = {
 // typography
 const typography = {
   fontSize: {
-    md: '1.6rem'
+    md: '16px'
   },
   fontWeight: {
     thin: '300',
