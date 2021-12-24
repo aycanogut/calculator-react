@@ -1,4 +1,5 @@
-import React, { CSSProperties, HTMLAttributes, ReactNode } from 'react';
+import React, { HTMLAttributes, ReactNode } from 'react';
+import { Button } from '@mantine/core';
 import helpers from '../../styles/helpers';
 
 // types
@@ -7,29 +8,33 @@ export interface Props extends HTMLAttributes<HTMLButtonElement> {
   variant: 'number' | 'operator' | 'equal';
 }
 
-const Button = ({ children, variant, ...props }: Props) => {
-  const style: CSSProperties = {
-    display: 'inline-block',
-    padding: '14px 34px',
-    outline: 'none',
-    border: 'none',
-    whiteSpace: 'nowrap',
-    fontSize: helpers.typography.fontSize.md,
-    fontWeight: helpers.typography.fontWeight.bold,
-    textDecoration: 'none',
-    color: helpers.color.textPrimary,
-    backgroundColor:
-      variant === 'number'
-        ? helpers.color.numberKeys
-        : variant === 'operator'
-        ? helpers.color.operatorKeys
-        : helpers.color.equalKey
-  };
+const ButtonComponent = ({ children, variant, ...props }: Props) => {
   return (
-    <button style={style} {...props}>
+    <Button
+      styles={() => ({
+        root: {
+          display: 'inline-block',
+          height: 42,
+          width: 76,
+          borderRadius: '0',
+          backgroundColor:
+            variant === 'number'
+              ? helpers.color.numberKeys
+              : variant === 'operator'
+              ? helpers.color.operatorKeys
+              : helpers.color.equalKey,
+          border: 0,
+          transition: 'background-color 0.2s ease-in-out',
+
+          '&:hover': {
+            backgroundColor: '#000'
+          }
+        }
+      })}
+      {...props}>
       {children}
-    </button>
+    </Button>
   );
 };
 
-export default Button;
+export default ButtonComponent;
