@@ -6,9 +6,6 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
-    "styled-components": "^5.3.3",
-    "styled-components-modifiers": "^1.2.5",
-    "styled-reset": "^4.3.4",
     "typescript": "^4.5.4",
     "web-vitals": "^2.1.0"
   },
@@ -20,7 +17,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-    "storybook": "DISABLE_ESLINT_PLUGIN=true start-storybook -p 6006 -s public",
+    "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
@@ -52,10 +49,10 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-backgrounds": "^6.4.9",
     "@storybook/addon-contexts": "^5.3.21",
     "@storybook/addon-docs": "^6.4.9",
-    "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",
     "@storybook/builder-webpack5": "^6.4.9",
