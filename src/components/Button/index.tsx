@@ -3,15 +3,6 @@ import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 import helpers from '../../styles/helpers';
 
-interface IButton {
-  children: string;
-  modifiers?: string;
-}
-
-const Button = ({ children, modifiers, ...props }: { children: string; modifiers?: string }) => {
-  return <StyledButton {...props}>{children}</StyledButton>;
-};
-
 // modifiers
 export const button_modifiers = {
   number: () => `
@@ -53,5 +44,14 @@ export const OperatorButton = styled(StyledButton)`
 export const EqualButton = styled(StyledButton)`
   ${applyStyleModifiers(button_modifiers)};
 `;
+
+interface IButton {
+  children: string;
+  modifiers?: string;
+}
+
+const Button = ({ children, modifiers, ...props }: IButton) => {
+  return <StyledButton {...props}>{children}</StyledButton>;
+};
 
 export default Button;
