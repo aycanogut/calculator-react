@@ -34,4 +34,3 @@ Equal.args = {
   variant: 'equal',
   children: '='
 };
-
