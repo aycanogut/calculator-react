@@ -26,7 +26,8 @@ const color = {
   input: '#1d1d1d',
   numberKeys: '#070707',
   operatorKeys: '#141414',
-  equalKey: '#463f66'
+  equalKey: '#463f66',
+  black: '#000000'
 };
 
 // typography
