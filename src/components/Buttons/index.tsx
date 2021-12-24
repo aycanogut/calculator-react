@@ -1,16 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
-import { NumberButton, OperatorButton, EqualButton } from '../Button';
+import Button from '../Button';
 
-const StyledButtons = styled.section``;
-
-const Buttons = ({ modifiers }: { modifiers?: string }) => {
+const Buttons = () => {
   return (
-    <StyledButtons>
-      <NumberButton modifiers="number">1</NumberButton>
-      <OperatorButton modifiers="operator">+</OperatorButton>
-      <EqualButton modifiers="equal">=</EqualButton>
-    </StyledButtons>
+    <div>
+      <Button variant="number">1</Button>
+      <Button variant="operator">+</Button>
+      <Button variant="equal">=</Button>
+    </div>
   );
 };
 

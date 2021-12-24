@@ -1,57 +1,35 @@
-import React from 'react';
-import styled from 'styled-components';
-import { applyStyleModifiers } from 'styled-components-modifiers';
+import React, { CSSProperties, HTMLAttributes, ReactNode } from 'react';
 import helpers from '../../styles/helpers';
 
-// modifiers
-export const button_modifiers = {
-  number: () => `
-  background-color: ${helpers.color.numberKeys};
-  `,
-  operator: () => `
-  background-color: ${helpers.color.operatorKeys};
-  `,
-  equal: () => `
-  background-color: ${helpers.color.equalKey};
-  `
-};
-
-// button styles
-const StyledButton = styled.button<IButton>`
-  display: inline-block;
-  padding: 1.4rem 3.4rem;
-  color: ${helpers.color.textPrimary};
-  outline: none;
-  border: none;
-  cursor: pointer;
-  white-space: nowrap;
-  font-size: ${helpers.typography.fontSize.md};
-  font-weight: ${helpers.typography.fontWeight.bold};
-  text-decoration: none;
-
-  ${applyStyleModifiers(button_modifiers)};
-`;
-
-// variants
-export const NumberButton = styled(StyledButton)`
-  ${applyStyleModifiers(button_modifiers)};
-`;
-
-export const OperatorButton = styled(StyledButton)`
-  ${applyStyleModifiers(button_modifiers)};
-`;
-
-export const EqualButton = styled(StyledButton)`
-  ${applyStyleModifiers(button_modifiers)};
-`;
-
-interface IButton {
-  children: string;
-  modifiers?: string;
+// types
+export interface Props extends HTMLAttributes<HTMLButtonElement> {
+  children: ReactNode;
+  variant: 'number' | 'operator' | 'equal';
 }
 
-const Button = ({ children, modifiers, ...props }: IButton) => {
-  return <StyledButton {...props}>{children}</StyledButton>;
+const Button = ({ children, variant, ...props }: Props) => {
+  const style: CSSProperties = {
+    display: 'inline-block',
+    padding: '14px 34px',
+    outline: 'none',
+    border: 'none',
+    whiteSpace: 'nowrap',
+    fontSize: helpers.typography.fontSize.md,
+    fontWeight: helpers.typography.fontWeight.bold,
+    textDecoration: 'none',
+    color: helpers.color.textPrimary,
+    backgroundColor:
+      variant === 'number'
+        ? helpers.color.numberKeys
+        : variant === 'operator'
+        ? helpers.color.operatorKeys
+        : helpers.color.equalKey
+  };
+  return (
+    <button style={style} {...props}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;
