@@ -1,33 +1,13 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
-import ButtonComponent, { Props } from '../Button';
+import Button from '../Button';
+import '../../styles/global.css';
 
-const meta: Meta = {
+export default {
   title: 'Button',
-  component: ButtonComponent
+  component: Button
 };
 
-export default meta;
-
-const Template: Story<Props> = (args) => <ButtonComponent {...args} />;
-
-export const Number = Template.bind({});
-
-Number.args = {
-  variant: 'number',
-  children: '1'
-};
-
-export const Operator = Template.bind({});
-
-Operator.args = {
-  variant: 'operator',
-  children: '+'
-};
-
-export const Equal = Template.bind({});
-
-Equal.args = {
-  variant: 'equal',
-  children: '='
-};
+// variants
+export const Number = () => <Button variant="number">1</Button>;
+export const Operator = () => <Button variant="operator">+</Button>;
+export const Equal = () => <Button variant="equal">=</Button>;
