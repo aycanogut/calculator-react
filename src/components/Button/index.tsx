@@ -1,6 +1,6 @@
 import React, { HTMLAttributes, ReactNode } from 'react';
-import { Button } from '@mantine/core';
-import helpers from '../../styles/helpers';
+import cx from 'classnames';
+import styles from './Button.module.css';
 
 // types
 export interface Props extends HTMLAttributes<HTMLButtonElement> {
@@ -8,7 +8,13 @@ export interface Props extends HTMLAttributes<HTMLButtonElement> {
   variant: 'number' | 'operator' | 'equal';
 }
 
-const ButtonComponent = ({ children, variant, ...props }: Props) => {
+const variants = {
+  number: styles.Number,
+  operator: styles.Operator,
+  equal: styles.Equal
+};
+
+const Button = ({ children, variant, className, ...props }: Props) => {
   return (
     <Button
       styles={() => ({
@@ -38,4 +44,4 @@ const ButtonComponent = ({ children, variant, ...props }: Props) => {
   );
 };
 
-export default ButtonComponent;
+export default Button;
