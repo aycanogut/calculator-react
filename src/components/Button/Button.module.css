@@ -1,0 +1,21 @@
+.Button {
+  display: inline-block;
+  height: 42px;
+  width: 76px;
+  color: var(--color-text-primary);
+  border: none;
+  border-radius: 0;
+  transition: 0.2s ease-in-out;
+}
+
+.Number {
+  background: var(--color-key-number);
+}
+
+.Operator {
+  background: var(--color-key-operator);
+}
+
+.Equal {
+  background: var(--color-key-equal);
+}
