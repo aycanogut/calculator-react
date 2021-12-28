@@ -16,31 +16,9 @@ const variants = {
 
 const Button = ({ children, variant, className, ...props }: Props) => {
   return (
-    <Button
-      styles={() => ({
-        root: {
-          display: 'inline-block',
-          height: 42,
-          width: 76,
-          borderRadius: '0',
-          backgroundColor:
-            variant === 'number'
-              ? helpers.color.numberKeys
-              : variant === 'operator'
-              ? helpers.color.operatorKeys
-              : helpers.color.equalKey,
-          border: 0,
-          transition: 'background-color 0.2s ease-in-out',
-
-          '&:hover': {
-            backgroundColor: helpers.color.black,
-            transition: 'background-color 0.2s ease-in-out'
-          }
-        }
-      })}
-      {...props}>
+    <button className={cx(styles.Button, variants[variant], className)} type="button" {...props}>
       {children}
-    </Button>
+    </button>
   );
 };
 
