@@ -5,8 +5,10 @@
   --color-black: #000;
   --color-text-primary: #fff;
   --color-text-secondary: #9b9b9c;
-  --color-background: #2b2c32;
+  --color-background: #221f1f;
   --color-input: #1d1d1d;
+  --color-border: #3e3e41;
+  --color-outer-border: #2b2d31;
   --color-key-number: #070707;
   --color-key-operator: #141414;
   --color-key-equal: #463f66;
@@ -18,7 +20,19 @@
   --font-weight: 400;
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+* {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
+  background: var(--color-background);
   font-family: var(--font-family);
   font-size: var(--font-size);
 }
