@@ -3,7 +3,6 @@
   align-items: center;
   width: 350px;
   height: 396px;
-  margin: 40% auto; /* update */
   padding: 0 4px 4px 4px;
   background: var(--color-input);
   border: 1px solid var(--color-border);
