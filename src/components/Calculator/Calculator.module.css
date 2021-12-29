@@ -1,0 +1,8 @@
+.Calculator {
+  display: flex;
+  height: 396px;
+  padding: 0 4px 4px 4px;
+  background: var(--color-input);
+  border: 1px solid var(--color-border);
+  border: 14px solid var(--color-outer-border);
+}
