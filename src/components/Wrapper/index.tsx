@@ -1,10 +1,11 @@
 import React from 'react';
-import Buttons from '../Buttons';
+import styles from './Wrapper.module.css';
+import Calculator from '../Calculator';
 
 const Wrapper = () => {
   return (
-    <div>
-      <Buttons />
+    <div className={styles.Wrapper}>
+      <Calculator />
     </div>
   );
 };
