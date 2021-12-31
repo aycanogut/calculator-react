@@ -1,9 +1,10 @@
 import React from 'react';
+import styles from './Wrapper.module.css';
 import Buttons from '../Buttons';
 
 const Wrapper = () => {
   return (
-    <div>
+    <div className={styles.Wrapper}>
       <Buttons />
     </div>
   );
