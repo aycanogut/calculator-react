@@ -5,8 +5,8 @@ import Button from '../Button';
 const Buttons = () => {
   return (
     <section className={styles.Buttons}>
-      <Button variant="operator">⌫</Button>
       <Button variant="operator">C</Button>
+      <Button variant="operator">⌫</Button>
       <Button variant="operator">%</Button>
       <Button variant="operator">÷</Button>
       <Button variant="number">7</Button>
