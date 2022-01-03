@@ -1,13 +1,14 @@
 import React from 'react';
-import styles from './Wrapper.module.css';
+import styles from './Input.module.css';
 
 // types
 export interface Props extends React.HTMLAttributes<HTMLDivElement> {
-  children: string;
+  children: number;
 }
 
 const Input = ({ children }: Props) => {
-  return <div className={styles.Input}>{children}</div>;
+  const [inputValue, setInputValue] = React.useState(21);
+  return <div className={styles.Input}>{inputValue}</div>;
 };
 
 export default Input;
