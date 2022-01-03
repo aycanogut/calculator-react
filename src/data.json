@@ -1,0 +1,12 @@
+{
+  "icons": [
+    {
+      "name": "back",
+      "src": "/assets/icons/back.svg"
+    },
+    {
+      "name": "history",
+      "src": "/assets/icons/history.svg"
+    }
+  ]
+}
