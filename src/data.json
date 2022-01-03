@@ -1,12 +1,12 @@
 {
-  "icons": [
-    {
-      "name": "back",
-      "src": "/assets/icons/back.svg"
+  "icons": {
+    "back": {
+      "src": "/assets/icons/back.svg",
+      "alt": "back icon"
     },
-    {
-      "name": "history",
-      "src": "/assets/icons/history.svg"
+    "history": {
+      "src": "/assets/icons/history.svg",
+      "alt": "history icon"
     }
-  ]
+  }
 }
