@@ -7,4 +7,4 @@ export default {
   component: Input
 };
 
-export const InputStory = () => <Input>21</Input>;
+export const InputStory = () => <Input>{21}</Input>;
