@@ -2,10 +2,9 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0.8rem;
 }
 
-.Topper {
+.Header {
   display: flex;
   justify-content: flex-start;
 }

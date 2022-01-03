@@ -7,7 +7,7 @@ import Icon from '../Icon';
 const Screen = () => {
   return (
     <section className={styles.Screen}>
-      <div className={styles.Topper}>
+      <div className={styles.Header}>
         <Icon source={data.icons.history.src} alt={data.icons.history.alt} />
       </div>
       <Input>{21}</Input>
