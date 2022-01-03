@@ -1,0 +1,7 @@
+.Input {
+  display: block;
+  margin: 0.2rem 0 0.2rem auto;
+  font-size: calc(var(--font-size) * 2);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
