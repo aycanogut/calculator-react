@@ -1,12 +1,23 @@
 import React from 'react';
 import styles from './HistoryItem.module.css';
 
-const HistoryItem = () => {
+export interface Props {
+  firstArgument: number;
+  operator: string;
+  secondArgument: number;
+  result: number;
+}
+
+const HistoryItem = ({ firstArgument, operator, secondArgument, result }: Props) => {
   return (
     <div className={styles.HistoryItem}>
-      <div>1</div>
-      <div>+</div>
-      <div>2</div>
+      <div className={styles.Operation}>
+        <span>{firstArgument}</span>
+        <span>{operator}</span>
+        <span>{secondArgument}</span>
+        <span>=</span>
+      </div>
+      <div className={styles.Result}>{result}</div>
     </div>
   );
 };
