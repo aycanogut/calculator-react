@@ -1,12 +1,12 @@
 .History {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   width: 100%;
   height: 100%;
-  padding: 0.2rem 0;
 }
 
-.Header {
+.Histories {
   display: flex;
   flex-direction: column;
 }
