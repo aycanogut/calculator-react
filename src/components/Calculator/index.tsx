@@ -1,7 +1,9 @@
 import React from 'react';
-import styles from './Calculator.module.css';
+
 import Screen from '../Screen';
 import Buttons from '../Buttons';
+
+import styles from './Calculator.module.css';
 
 const Calculator = () => {
   return (

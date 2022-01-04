@@ -1,8 +1,11 @@
 import React from 'react';
-import styles from './Screen.module.css';
+
 import data from '../../data.json';
-import Input from '../Input';
+
 import Icon from '../Icon';
+import Input from '../Input';
+
+import styles from './Screen.module.css';
 
 const Screen = () => {
   return (

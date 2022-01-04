@@ -2,11 +2,11 @@ import React from 'react';
 
 import data from '../../data.json';
 
-import styles from './History.module.css';
-
 import Icon from '../Icon';
 import HistoryItem from '../HistoryItem';
 import Footer from '../Footer';
+
+import styles from './History.module.css';
 
 const History = () => {
   return (

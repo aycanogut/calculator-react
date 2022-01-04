@@ -1,8 +1,9 @@
 import React from 'react';
-import styles from './Wrapper.module.css';
 
 import Calculator from '../Calculator';
 import History from '../History';
+
+import styles from './Wrapper.module.css';
 
 const Wrapper = () => {
   return (

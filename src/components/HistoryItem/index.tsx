@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './HistoryItem.module.css';
 
+import styles from './HistoryItem.module.css';
 export interface Props {
   firstArgument: number;
   operator: string;
