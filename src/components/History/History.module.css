@@ -10,3 +10,9 @@
   display: flex;
   flex-direction: column;
 }
+
+.HistoryWrapper {
+  width: 320px;
+  padding: 0.6rem;
+  border: 1px solid #fff;
+}

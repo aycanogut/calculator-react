@@ -1,0 +1,7 @@
+.CalculatorWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+  padding: 0.4rem;
+  border: 1px solid #fff;
+}

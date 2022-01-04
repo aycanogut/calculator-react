@@ -19,3 +19,7 @@
   font-size: calc(var(--font-size) * 2.5);
   font-weight: 700;
 }
+
+.HistoryItemWrapper {
+  width: 120px;
+}
