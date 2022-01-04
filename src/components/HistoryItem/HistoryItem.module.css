@@ -1,3 +1,21 @@
 .HistoryItem {
-  /*  */
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 auto;
+  padding: 0.78rem 0.4rem;
+}
+
+.Operation {
+  color: var(--color-text-secondary);
+}
+
+.Operation span {
+  padding: 0.4rem;
+}
+
+.Result {
+  margin: 0.5rem 0 0 auto;
+  color: var(--color-text-primary);
+  font-size: calc(var(--font-size) * 2.5);
+  font-weight: 700;
 }
