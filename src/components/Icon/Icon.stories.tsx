@@ -7,4 +7,4 @@ export default {
   component: Input
 };
 
-export const InputStory = () => <Input children={0} />;
+export const InputStory = () => <Input>{0}</Input>;
