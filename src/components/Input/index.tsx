@@ -8,8 +8,7 @@ export interface Props extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const Input = ({ children }: Props) => {
-  const [inputValue, setInputValue] = React.useState(21);
-  return <div className={styles.Input}>{inputValue}</div>;
+  return <div className={styles.Input}>{children}</div>;
 };
 
 export default Input;
