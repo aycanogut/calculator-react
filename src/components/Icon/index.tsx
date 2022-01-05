@@ -8,9 +8,9 @@ export interface Props extends React.HTMLAttributes<HTMLImageElement> {
   alt: string;
 }
 
-const Icon = ({ source, alt }: Props) => {
+const Icon = ({ source, alt, onClick }: Props) => {
   return (
-    <div className={styles.Icon}>
+    <div className={styles.Icon} onClick={onClick}>
       <img src={source} alt={alt} />
     </div>
   );
