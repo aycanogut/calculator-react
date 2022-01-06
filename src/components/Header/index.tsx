@@ -1,15 +1,33 @@
 import React from 'react';
 
-import data from '../../data.json';
+import { historyIcon, backIcon } from '../../utils/iconShortcuts';
 
 import Icon from '../Icon';
+import History from '../History';
+import Calculator from '../Calculator';
 
 import styles from './Header.module.css';
 
-const Header = () => {
+export interface Props {
+  setLayout: (layout: JSX.Element) => void;
+  icon: any;
+  setIcon: Function;
+}
+
+const Header = ({ setLayout, icon, setIcon }: Props) => {
+  const handleClick = () => {
+    if (icon.src === backIcon.src) {
+      setLayout(<Calculator />);
+      setIcon(historyIcon);
+    } else {
+      setLayout(<History />);
+      setIcon(backIcon);
+    }
+  };
+
   return (
     <header className={styles.Header}>
-      <Icon source={data.icons.back.src} alt={data.icons.back.alt} />
+      <Icon source={icon.src} alt={icon.alt} onClick={handleClick} />
     </header>
   );
 };
