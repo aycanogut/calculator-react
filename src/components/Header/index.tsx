@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 
 import { historyIcon, backIcon } from '../../utils/iconShortcuts';
 
@@ -15,7 +15,8 @@ export interface Props {
 }
 
 const Header = ({ setLayout, icon, setIcon }: Props) => {
-  const handleClick = () => {
+  // conditional rendering of layout and icon
+  const handleClick: MouseEventHandler = () => {
     if (icon.src === backIcon.src) {
       setLayout(<Calculator />);
       setIcon(historyIcon);
