@@ -1,11 +1,12 @@
 import React from 'react';
 
 import styles from './HistoryItem.module.css';
+
 export interface Props {
-  firstArgument: number;
+  firstArgument: number | string;
   operator: string;
-  secondArgument: number;
-  result: number;
+  secondArgument: number | string;
+  result: number | string;
 }
 
 const HistoryItem = ({ firstArgument, operator, secondArgument, result }: Props) => {
