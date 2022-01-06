@@ -17,7 +17,7 @@ const Wrapper = () => {
   return (
     <div className={styles.Wrapper}>
       <Header setLayout={setLayout} icon={icon} setIcon={setIcon} />
-      {layout} // 1
+      {layout /* 1 */}
     </div>
   );
 };
