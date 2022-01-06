@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Input from '../Input';
+
 import '../../styles/global.css';
 
 export default {

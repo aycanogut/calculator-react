@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Wrapper from '../Wrapper';
+
 import '../../styles/global.css';
 
 export default {

@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Screen from '../Screen';
+
 import '../../styles/global.css';
 import styles from './Screen.module.css';
 

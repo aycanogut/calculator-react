@@ -1,6 +1,7 @@
 import React from 'react';
 
 import History from '../History';
+
 import '../../styles/global.css';
 import styles from './History.module.css';
 

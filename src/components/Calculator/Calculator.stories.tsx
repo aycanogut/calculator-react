@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Calculator from '../Calculator';
+
 import '../../styles/global.css';
 import styles from './Calculator.module.css';
 

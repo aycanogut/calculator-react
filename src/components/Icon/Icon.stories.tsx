@@ -1,6 +1,9 @@
 import React from 'react';
+
 import data from '../../data.json';
+
 import Icon from '../Icon';
+
 import '../../styles/global.css';
 
 export default {
