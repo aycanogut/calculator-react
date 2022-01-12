@@ -1,34 +1,27 @@
 import React, { MouseEventHandler } from 'react';
 
-import { historyIcon, backIcon } from '../../utils/iconShortcuts';
+import icons from '../../data.json';
 
 import Icon from '../Icon';
-import History from '../History';
-import Calculator from '../Calculator';
 
 import styles from './Header.module.css';
 
 export interface Props {
-  setLayout: (layout: JSX.Element) => void;
-  icon: any;
-  setIcon: Function;
+  view: any;
+  setView: Function;
 }
 
-const Header = ({ setLayout, icon, setIcon }: Props) => {
-  // conditional rendering of layout and icon
+const Header = ({ view, setView }: Props) => {
   const handleClick: MouseEventHandler = () => {
-    if (icon.src === backIcon.src) {
-      setLayout(<Calculator />);
-      setIcon(historyIcon);
-    } else {
-      setLayout(<History />);
-      setIcon(backIcon);
-    }
+    view === 'calculator' ? setView('history') : setView('calculator');
   };
+
+  const currentIcon = view === 'calculator' ? icons.history : icons.back;
 
   return (
     <header className={styles.Header}>
-      <Icon source={icon.src} alt={icon.alt} onClick={handleClick} />
+      {/* alt */}
+      <Icon source={currentIcon.src} alt={currentIcon.alt} onClick={handleClick} />
     </header>
   );
 };
