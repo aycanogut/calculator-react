@@ -11910,6 +11910,11 @@ react-helmet-async@^1.0.2, react-helmet-async@^1.0.7:
     react-fast-compare "^3.2.0"
     shallowequal "^1.1.0"
 
+react-icomoon@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/react-icomoon/-/react-icomoon-2.4.2.tgz#390489597be30519f4b9c8d5a701cffc737679c1"
+  integrity sha512-Hw7itIOQV5zRoYFpubr5C52h0qt7Bw00jE6TIFdgR6lH4RZOI0bNao576trW0Y6xxx30JGUOk3KqSagAERKDdg==
+
 react-inspector@^5.1.0:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/react-inspector/-/react-inspector-5.1.1.tgz#58476c78fde05d5055646ed8ec02030af42953c8"
