@@ -1,16 +1,14 @@
 {
-  "icons": {
-    "back": {
-      "src": "/assets/icons/back.svg",
-      "alt": "back icon"
-    },
-    "history": {
-      "src": "/assets/icons/history.svg",
-      "alt": "history icon"
-    },
-    "garbage": {
-      "src": "/assets/icons/garbage.svg",
-      "alt": "garbage icon"
-    }
+  "back": {
+    "src": "/assets/icons/back.svg",
+    "alt": "back icon"
+  },
+  "history": {
+    "src": "/assets/icons/history.svg",
+    "alt": "history icon"
+  },
+  "garbage": {
+    "src": "/assets/icons/garbage.svg",
+    "alt": "garbage icon"
   }
 }
