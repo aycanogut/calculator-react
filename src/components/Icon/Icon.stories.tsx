@@ -1,6 +1,6 @@
 import React from 'react';
 
-import data from '../../data.json';
+import icons from '../../data.json';
 
 import Icon from '../Icon';
 
@@ -11,12 +11,8 @@ export default {
   component: Icon
 };
 
-export const HistoryIcon = () => (
-  <Icon source={data.icons.history.src} alt={data.icons.history.alt} />
-);
+export const HistoryIcon = () => <Icon source={icons.history.src} alt={icons.history.alt} />;
 
-export const BackIcon = () => <Icon source={data.icons.back.src} alt={data.icons.back.alt} />;
+export const BackIcon = () => <Icon source={icons.back.src} alt={icons.back.alt} />;
 
-export const GarbageIcon = () => (
-  <Icon source={data.icons.garbage.src} alt={data.icons.garbage.alt} />
-);
+export const GarbageIcon = () => <Icon source={icons.garbage.src} alt={icons.garbage.alt} />;
