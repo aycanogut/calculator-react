@@ -1,5 +1,6 @@
 import React, { MouseEventHandler } from 'react';
 
+import Layout from '../../utils/enum';
 import icons from '../../data.json';
 
 import Icon from '../Icon';
@@ -13,10 +14,10 @@ export interface Props {
 
 const Header = ({ view, setView }: Props) => {
   const handleClick: MouseEventHandler = () => {
-    view === 'calculator' ? setView('history') : setView('calculator');
+    view === Layout.Calculator ? setView(Layout.History) : setView(Layout.Calculator);
   };
 
-  const currentIcon = view === 'calculator' ? icons.history : icons.back;
+  const currentIcon = view === Layout.Calculator ? icons.history : icons.back;
 
   return (
     <header className={styles.Header}>
