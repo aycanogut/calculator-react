@@ -1,6 +1,6 @@
 import React, { MouseEventHandler } from 'react';
 
-import data from '../../data.json';
+import icons from '../../data.json';
 
 import Icon from '../Icon';
 
@@ -17,7 +17,7 @@ const Footer = ({ setHistory }: Props) => {
 
   return (
     <footer className={styles.Footer}>
-      <Icon source={data.icons.garbage.src} alt={data.icons.garbage.alt} onClick={handleClick} />
+      <Icon source={icons.garbage.src} alt={icons.garbage.alt} onClick={handleClick} />
     </footer>
   );
 };
