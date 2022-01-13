@@ -1,19 +1,19 @@
-import React from 'react';
+import React, { useEffect, MouseEventHandler } from 'react';
+import IcoMoon from 'react-icomoon';
+
+const iconSet = require('../../utils/selection.json');
 
 import styles from './Icon.module.css';
 
 // types
 export interface Props extends React.HTMLAttributes<HTMLImageElement> {
-  source: string;
-  alt: string;
+  icon: any;
+  size: number;
+  onClick: MouseEventHandler<Element>;
 }
 
-const Icon = ({ source, alt, onClick }: Props) => {
-  return (
-    <div className={styles.Icon} onClick={onClick}>
-      <img src={source} alt={alt} />
-    </div>
-  );
+const Icon = ({ size, onClick, ...props }: Props) => {
+  return <IcoMoon iconSet={iconSet} className={styles.Icon} onClick={onClick} {...props} />;
 };
 
 export default Icon;
