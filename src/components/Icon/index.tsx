@@ -12,8 +12,8 @@ export interface Props {
 }
 
 const Icon = ({ onClick, ...props }: Props) => {
-  // update all svg items viewBox values
   useEffect(() => {
+    // update all svg items viewBox values
     const svg = document.querySelectorAll('svg');
     const svgArr = [...svg];
 

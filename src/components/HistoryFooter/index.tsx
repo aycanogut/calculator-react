@@ -9,7 +9,7 @@ export interface Props {
 
 const Footer = ({ setHistory }: Props) => {
   const handleClick: MouseEventHandler = () => {
-    setHistory([]); // set empty array to history
+    setHistory([]); // set empty array to history to remove history layout
   };
 
   return (
