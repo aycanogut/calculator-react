@@ -8,8 +8,7 @@ import styles from './Icon.module.css';
 // types
 export interface Props extends React.HTMLAttributes<HTMLImageElement> {
   icon: any;
-
-  onClick: MouseEventHandler<Element>;
+  onClick?: MouseEventHandler<Element>;
 }
 
 const Icon = ({ onClick, ...props }: Props) => {
