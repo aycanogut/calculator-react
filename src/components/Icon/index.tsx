@@ -8,11 +8,11 @@ import styles from './Icon.module.css';
 // types
 export interface Props extends React.HTMLAttributes<HTMLImageElement> {
   icon: any;
-  size: number;
+
   onClick: MouseEventHandler<Element>;
 }
 
-const Icon = ({ size, onClick, ...props }: Props) => {
+const Icon = ({ onClick, ...props }: Props) => {
   return <IcoMoon iconSet={iconSet} className={styles.Icon} onClick={onClick} {...props} />;
 };
 
