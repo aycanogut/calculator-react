@@ -13,6 +13,14 @@ export interface Props extends React.HTMLAttributes<HTMLImageElement> {
 }
 
 const Icon = ({ onClick, ...props }: Props) => {
+  // update all svg items viewBox values
+  useEffect(() => {
+    const svg = document.querySelectorAll('svg');
+    const svgArr = [...svg];
+
+    svgArr.map((item) => item.setAttribute('viewBox', '0 0 32 32'));
+  });
+
   return <IcoMoon iconSet={iconSet} className={styles.Icon} onClick={onClick} {...props} />;
 };
 
