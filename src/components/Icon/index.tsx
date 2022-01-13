@@ -6,8 +6,8 @@ const iconSet = require('../../utils/selection.json');
 import styles from './Icon.module.css';
 
 // types
-export interface Props extends React.HTMLAttributes<HTMLImageElement> {
-  icon: any;
+export interface Props {
+  icon: string;
   onClick?: MouseEventHandler<Element>;
 }
 

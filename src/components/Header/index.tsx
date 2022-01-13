@@ -7,7 +7,7 @@ import Icon from '../Icon';
 import styles from './Header.module.css';
 
 export interface Props {
-  view: any;
+  view: string;
   setView: Function;
 }
 
