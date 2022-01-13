@@ -1,7 +1,5 @@
 import React from 'react';
 
-import icons from '../../data.json';
-
 import Icon from '../Icon';
 
 import '../../styles/global.css';
@@ -11,8 +9,8 @@ export default {
   component: Icon
 };
 
-export const HistoryIcon = () => <Icon source={icons.history.src} alt={icons.history.alt} />;
+export const BackIcon = () => <Icon icon="back" />;
 
-export const BackIcon = () => <Icon source={icons.back.src} alt={icons.back.alt} />;
+export const HistoryIcon = () => <Icon icon="history" />;
 
-export const GarbageIcon = () => <Icon source={icons.garbage.src} alt={icons.garbage.alt} />;
+export const RemoveIcon = () => <Icon icon="remove" />;
