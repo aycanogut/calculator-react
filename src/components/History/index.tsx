@@ -7,7 +7,7 @@ import styles from './History.module.css';
 
 const History = () => {
   const [history, setHistory] = useState([
-    { firstArgument: '1', operator: '+', secondArgument: '3', result: '2' } // hard coded dummy data
+    { first: '1', operator: '+', second: '3', result: '2' } // hard coded dummy data
   ]);
 
   return (
@@ -17,9 +17,9 @@ const History = () => {
           return (
             <HistoryItem
               key={index}
-              firstArgument={item.firstArgument}
+              first={item.first}
               operator={item.operator}
-              secondArgument={item.secondArgument}
+              second={item.second}
               result={item.result}
             />
           );

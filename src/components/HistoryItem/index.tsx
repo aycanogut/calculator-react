@@ -3,19 +3,19 @@ import React from 'react';
 import styles from './HistoryItem.module.css';
 
 export interface Props {
-  firstArgument: number | string;
+  first: number | string;
   operator: string;
-  secondArgument: number | string;
+  second: number | string;
   result: number | string;
 }
 
-const HistoryItem = ({ firstArgument, operator, secondArgument, result }: Props) => {
+const HistoryItem = ({ first, operator, second, result }: Props) => {
   return (
     <div className={styles.HistoryItem}>
       <div className={styles.Operation}>
-        <span>{firstArgument}</span>
+        <span>{first}</span>
         <span>{operator}</span>
-        <span>{secondArgument}</span>
+        <span>{second}</span>
         <span>=</span>
       </div>
       <div className={styles.Result}>{result}</div>

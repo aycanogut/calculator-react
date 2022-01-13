@@ -12,6 +12,6 @@ export default {
 
 export const HistoryItemStory = () => (
   <div className={styles.HistoryItemWrapper}>
-    <HistoryItem firstArgument={21} operator="+" secondArgument={42} result={63} />
+    <HistoryItem first={21} operator="+" second={42} result={63} />
   </div>
 );
