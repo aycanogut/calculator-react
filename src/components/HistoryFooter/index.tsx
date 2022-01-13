@@ -1,7 +1,7 @@
 import React, { MouseEventHandler } from 'react';
 import Icon from '../Icon';
 
-import styles from './Footer.module.css';
+import styles from './HistoryFooter.module.css';
 
 export interface Props {
   setHistory?: any;

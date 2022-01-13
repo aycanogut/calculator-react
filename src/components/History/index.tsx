@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import HistoryItem from '../HistoryItem';
-import Footer from '../Footer';
+import HistoryFooter from '../HistoryFooter';
 
 import styles from './History.module.css';
 
@@ -25,7 +25,7 @@ const History = () => {
           );
         })}
       </div>
-      <Footer setHistory={setHistory} />
+      <HistoryFooter setHistory={setHistory} />
     </section>
   );
 };
