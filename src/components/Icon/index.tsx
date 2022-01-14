@@ -11,8 +11,8 @@ export interface Props {
   onClick?: MouseEventHandler<Element>;
 }
 
-const Icon = ({ onClick, ...props }: Props) => {
-  return <IcoMoon iconSet={iconSet} className={styles.Icon} onClick={onClick} {...props} />;
+const Icon = ({ ...props }: Props) => {
+  return <IcoMoon iconSet={iconSet} className={styles.Icon} {...props} />;
 };
 
 export default Icon;
