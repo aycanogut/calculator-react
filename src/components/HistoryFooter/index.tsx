@@ -7,7 +7,7 @@ export interface Props {
   setHistory: Function;
 }
 
-const Footer = ({ setHistory }: Props) => {
+const HistoryFooter = ({ setHistory }: Props) => {
   const handleClick: MouseEventHandler = () => {
     setHistory([]);
   };
@@ -19,4 +19,4 @@ const Footer = ({ setHistory }: Props) => {
   );
 };
 
-export default Footer;
+export default HistoryFooter;
