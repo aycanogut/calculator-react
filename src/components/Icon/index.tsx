@@ -11,7 +11,7 @@ export interface Props {
   onClick?: MouseEventHandler<Element>;
 }
 
-const Icon = ({ ...props }: Props) => {
+const Icon = (props: Props) => {
   return <IcoMoon iconSet={iconSet} className={styles.Icon} {...props} />;
 };
 
