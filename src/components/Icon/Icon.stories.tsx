@@ -9,8 +9,8 @@ export default {
   component: Icon
 };
 
-export const BackIcon = () => <Icon icon="back" />;
+export const BackIcon = (args: JSX.IntrinsicAttributes) => <Icon icon="back" {...args} />;
 
-export const HistoryIcon = () => <Icon icon="history" />;
+export const HistoryIcon = (args: JSX.IntrinsicAttributes) => <Icon icon="history" />;
 
-export const RemoveIcon = () => <Icon icon="remove" />;
+export const RemoveIcon = (args: JSX.IntrinsicAttributes) => <Icon icon="remove" />;
