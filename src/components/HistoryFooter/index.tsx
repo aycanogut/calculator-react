@@ -8,13 +8,13 @@ export interface Props {
 }
 
 const HistoryFooter = ({ setHistory }: Props) => {
-  const handleClick: MouseEventHandler = () => {
+  const clearHistory: MouseEventHandler = () => {
     setHistory([]);
   };
 
   return (
     <footer className={styles.Footer}>
-      <Icon icon="remove" onClick={handleClick} />
+      <Icon icon="remove" onClick={clearHistory} />
     </footer>
   );
 };
