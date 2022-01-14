@@ -1,7 +1,7 @@
-import React, { useEffect, MouseEventHandler } from 'react';
+import React, { MouseEventHandler } from 'react';
 import IcoMoon from 'react-icomoon';
 
-const iconSet = require('../../utils/selection.json');
+const iconSet = require('./selection.json');
 
 import styles from './Icon.module.css';
 
