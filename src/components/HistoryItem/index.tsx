@@ -3,10 +3,10 @@ import React from 'react';
 import styles from './HistoryItem.module.css';
 
 export interface Props {
-  first: number | string;
+  first: number;
   operator: string;
-  second: number | string;
-  result: number | string;
+  second: number;
+  result: number;
 }
 
 const HistoryItem = ({ first, operator, second, result }: Props) => {
