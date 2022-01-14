@@ -4,12 +4,12 @@ import Icon from '../Icon';
 import styles from './HistoryFooter.module.css';
 
 export interface Props {
-  setHistory?: any;
+  setHistory: Function;
 }
 
 const Footer = ({ setHistory }: Props) => {
   const handleClick: MouseEventHandler = () => {
-    setHistory([]); // set empty array to history to remove history layout
+    setHistory([]);
   };
 
   return (
