@@ -14,15 +14,7 @@ const History = () => {
     <section className={styles.History}>
       <div className={styles.Histories}>
         {history.map((item, index) => {
-          return (
-            <HistoryItem
-              key={index}
-              first={item.first}
-              operator={item.operator}
-              second={item.second}
-              result={item.result}
-            />
-          );
+          return <HistoryItem key={index} {...item} />;
         })}
       </div>
       <HistoryFooter setHistory={setHistory} />
