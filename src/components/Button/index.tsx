@@ -3,7 +3,6 @@ import cx from 'classnames';
 
 import styles from './Button.module.css';
 
-// types
 export interface Props extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   variant: 'number' | 'operator' | 'equal';
