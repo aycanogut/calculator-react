@@ -1,6 +1,6 @@
 import React, { MouseEventHandler } from 'react';
 
-import Layout from '../../utils/enum';
+import { LayoutTypes } from '../../constant';
 
 import Icon from '../Icon';
 
@@ -13,10 +13,12 @@ export interface Props {
 
 const Header = ({ view, setView }: Props) => {
   const handleClick: MouseEventHandler = () => {
-    view === Layout.Calculator ? setView(Layout.History) : setView(Layout.Calculator);
+    view === LayoutTypes.Calculator
+      ? setView(LayoutTypes.History)
+      : setView(LayoutTypes.Calculator);
   };
 
-  const currentIcon = view === Layout.Calculator ? 'history' : 'back';
+  const currentIcon = view === LayoutTypes.Calculator ? 'history' : 'back';
 
   return (
     <header className={styles.Header}>
