@@ -1,6 +1,4 @@
 .Calculator {
   display: flex;
   flex-direction: column;
-  width: 330px;
-  padding: 0.4rem;
 }
