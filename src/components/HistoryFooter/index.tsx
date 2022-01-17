@@ -13,7 +13,7 @@ const HistoryFooter = ({ setHistory }: Props) => {
   };
 
   return (
-    <footer className={styles.Footer}>
+    <footer className={styles.HistoryFooter}>
       <Icon icon="garbage" onClick={clearHistory} />
     </footer>
   );

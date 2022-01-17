@@ -9,4 +9,6 @@ export default {
   component: HistoryFooter
 };
 
-export const FooterStory = (args: JSX.IntrinsicAttributes & Props) => <HistoryFooter {...args} />;
+export const HistoryFooterStory = (args: JSX.IntrinsicAttributes & Props) => (
+  <HistoryFooter {...args} />
+);
