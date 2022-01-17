@@ -13,6 +13,7 @@
 
 .HistoryWrapper {
   width: 320px;
+  height: 320px;
   padding: 0.6rem;
   border: 1px solid #fff;
 }
