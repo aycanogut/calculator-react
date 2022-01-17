@@ -2,8 +2,8 @@ import React from 'react';
 
 import Screen from '../Screen';
 
-import '../../styles/global.css';
 import styles from './Screen.module.css';
+import '../../styles/global.css';
 
 export default {
   title: 'Screen',
@@ -11,7 +11,7 @@ export default {
 };
 
 export const ScreenStory = () => (
-  <div className={styles.StoryWrapper}>
+  <div className={styles.ScreenStory}>
     <Screen />
   </div>
 );

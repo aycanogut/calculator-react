@@ -2,6 +2,7 @@ import React from 'react';
 
 import Calculator from '../Calculator';
 
+import styles from './Calculator.module.css';
 import '../../styles/global.css';
 
 export default {
@@ -9,4 +10,8 @@ export default {
   component: Calculator
 };
 
-export const CalculatorStory = () => <Calculator />;
+export const CalculatorStory = () => (
+  <div className={styles.CalculatorStory}>
+    <Calculator />
+  </div>
+);
