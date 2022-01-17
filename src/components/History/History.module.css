@@ -1,0 +1,19 @@
+.History {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+
+.Histories {
+  display: flex;
+  flex-direction: column;
+}
+
+.HistoryWrapper {
+  width: 320px;
+  height: 320px;
+  padding: 0.6rem;
+  border: 1px solid #fff;
+}

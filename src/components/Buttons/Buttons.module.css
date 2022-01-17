@@ -3,7 +3,9 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   gap: 3px;
-  width: 312px;
-  height: 230px;
   margin: auto 0 0 0;
+}
+
+.ButtonsStory {
+  width: 200px;
 }

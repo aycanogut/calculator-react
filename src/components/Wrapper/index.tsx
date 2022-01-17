@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import { LayoutTypes } from '../../constant';
+
+import Header from '../Header';
+import Calculator from '../Calculator';
+import History from '../History';
+
 import styles from './Wrapper.module.css';
-import Buttons from '../Buttons';
 
 const Wrapper = () => {
+  const [view, setView] = useState(LayoutTypes.Calculator);
+  const isCalculator = view === LayoutTypes.Calculator;
+
   return (
     <div className={styles.Wrapper}>
-      <Buttons />
+      <Header view={view} setView={setView} />
+      {isCalculator ? <Calculator /> : <History />}
     </div>
   );
 };

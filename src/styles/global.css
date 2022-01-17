@@ -26,8 +26,8 @@
   box-sizing: border-box;
 }
 
-* {
-  height: 400px;
+html {
+  height: 100%;
 }
 
 body {
@@ -37,4 +37,8 @@ body {
   background: var(--color-background);
   font-family: var(--font-family);
   font-size: var(--font-size);
+}
+
+img {
+  max-width: 100%;
 }

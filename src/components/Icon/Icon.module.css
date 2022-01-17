@@ -1,0 +1,6 @@
+.Icon {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  color: var(--color-text-primary);
+}
