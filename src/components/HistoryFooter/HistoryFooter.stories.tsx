@@ -1,6 +1,6 @@
 import React from 'react';
 
-import HistoryFooter, { Props } from '../HistoryFooter';
+import HistoryFooter, { HistoryFooterProps } from '../HistoryFooter';
 
 import '../../styles/global.css';
 
@@ -9,6 +9,6 @@ export default {
   component: HistoryFooter
 };
 
-export const HistoryFooterStory = (args: JSX.IntrinsicAttributes & Props) => (
+export const HistoryFooterStory = (args: JSX.IntrinsicAttributes & HistoryFooterProps) => (
   <HistoryFooter {...args} />
 );

@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import styles from './Button.module.css';
 
-export interface Props extends HTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   variant: 'number' | 'operator' | 'equal';
 }
@@ -14,7 +14,7 @@ const variants = {
   equal: styles.Equal
 };
 
-const Button = ({ children, variant, className, ...props }: Props) => {
+const Button = ({ children, variant, className, ...props }: ButtonProps) => {
   return (
     <button className={cx(styles.Button, variants[variant], className)} type="button" {...props}>
       {children}

@@ -6,12 +6,12 @@ import Icon from '../Icon';
 
 import styles from './Header.module.css';
 
-export interface Props {
+export interface HeaderProps {
   view: string;
   setView: Function;
 }
 
-const Header = ({ view, setView }: Props) => {
+const Header = ({ view, setView }: HeaderProps) => {
   const handleClick: MouseEventHandler = () => {
     view === LayoutTypes.Calculator
       ? setView(LayoutTypes.History)
