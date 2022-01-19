@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Input from '../Input';
+import Input, { InputProps } from '../Input';
 
 import '../../styles/global.css';
 
@@ -9,4 +9,4 @@ export default {
   component: Input
 };
 
-export const InputStory = () => <Input>{21}</Input>;
+export const InputStory = (args: InputProps) => <Input {...args} />;
