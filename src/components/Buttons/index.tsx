@@ -6,7 +6,16 @@ import Button from '../Button';
 
 import styles from './Buttons.module.css';
 
+interface UpdateDisplayValues {
+  e: MouseEvent;
+  target: any;
+}
+
 const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
+  const updateDisplay = (e: UpdateDisplayValues) => {
+    setDisplayValue(displayValue.concat(e.target.textContent));
+  };
+
   return (
     <section className={styles.Buttons}>
       <Button variant="operator">C</Button>
