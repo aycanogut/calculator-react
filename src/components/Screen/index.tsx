@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Input from '../Input';
+import Display from '../Display';
 
 import styles from './Screen.module.css';
 
-const Screen = () => {
+const Screen = ({ displayValue }: any) => {
   return (
     <section className={styles.Screen}>
-      <Input>{21}</Input>
+      <Display>{displayValue}</Display>
     </section>
   );
 };
