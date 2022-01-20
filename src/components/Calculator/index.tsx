@@ -5,11 +5,16 @@ import Buttons from '../Buttons';
 
 import styles from './Calculator.module.css';
 
-const Calculator = () => {
+export interface DisplayValues {
+  displayValue: string;
+  setDisplayValue: Function;
+}
+
+const Calculator = ({ displayValue, setDisplayValue }: DisplayValues) => {
   return (
     <div className={styles.Calculator}>
-      <Screen />
-      <Buttons />
+      <Screen displayValue={displayValue} />
+      <Buttons displayValue={displayValue} setDisplayValue={setDisplayValue} />
     </div>
   );
 };

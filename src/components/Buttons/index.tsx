@@ -1,10 +1,12 @@
 import React from 'react';
 
+import { DisplayValues } from '../Calculator';
+
 import Button from '../Button';
 
 import styles from './Buttons.module.css';
 
-const Buttons = () => {
+const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
   return (
     <section className={styles.Buttons}>
       <Button variant="operator">C</Button>
