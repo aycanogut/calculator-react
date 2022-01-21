@@ -4,7 +4,11 @@ import Display from '../Display';
 
 import styles from './Screen.module.css';
 
-const Screen = ({ displayValue }: any) => {
+export interface ScreenProps extends React.HTMLAttributes<HTMLDivElement> {
+  displayValue: string;
+}
+
+const Screen = ({ displayValue }: ScreenProps) => {
   return (
     <section className={styles.Screen}>
       <Display displayValue={displayValue} />
