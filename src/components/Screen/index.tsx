@@ -7,7 +7,7 @@ import styles from './Screen.module.css';
 const Screen = ({ displayValue }: any) => {
   return (
     <section className={styles.Screen}>
-      <Display>{displayValue}</Display>
+      <Display displayValue={displayValue} />
     </section>
   );
 };
