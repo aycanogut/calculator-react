@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { DisplayValues } from '../Calculator';
+import { DisplayValues } from '../Buttons';
 
 import Buttons from '../Buttons';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Display, { DisplayProps } from '.';
+import Display, { DisplayProps } from './index';
 
 import '../../styles/global.css';
 
