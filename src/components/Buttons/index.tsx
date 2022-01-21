@@ -1,10 +1,13 @@
 import React from 'react';
 
-import { DisplayValues } from '../Calculator';
-
 import Button from '../Button';
 
 import styles from './Buttons.module.css';
+
+export interface DisplayValues {
+  displayValue: string;
+  setDisplayValue: Function;
+}
 
 const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
   const updateDisplay = (e: any) => {
