@@ -11,7 +11,13 @@ export interface DisplayValues {
 
 const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
   const updateDisplay = (e: any) => {
-    setDisplayValue(displayValue.concat(e.target.textContent));
+    const display = e.target.textContent;
+
+    if (displayValue === '0') {
+      setDisplayValue(display);
+    } else {
+      setDisplayValue(displayValue.concat(display));
+    }
   };
 
   return (
