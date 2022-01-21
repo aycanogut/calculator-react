@@ -13,10 +13,12 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
   const updateDisplay = (e: any) => {
     const display = e.target.textContent;
 
-    if (displayValue === '0') {
-      setDisplayValue(display);
-    } else {
-      setDisplayValue(displayValue.concat(display));
+    if (displayValue.length < 16) {
+      if (displayValue === '0') {
+        setDisplayValue(display);
+      } else {
+        setDisplayValue(displayValue.concat(display));
+      }
     }
   };
 
