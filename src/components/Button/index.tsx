@@ -14,9 +14,9 @@ const variants = {
   equal: styles.Equal
 };
 
-const Button = ({ value, variant, className, ...props }: ButtonProps) => {
+const Button = ({ value, variant, ...props }: ButtonProps) => {
   return (
-    <button className={cx(styles.Button, variants[variant], className)} type="button" {...props}>
+    <button className={cx(styles.Button, variants[variant])} type="button" {...props}>
       {value}
     </button>
   );
