@@ -3,11 +3,11 @@ import React from 'react';
 import styles from './Display.module.css';
 
 export interface DisplayProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: number;
+  displayValue: string;
 }
 
-const Display = ({ children }: DisplayProps) => {
-  return <div className={styles.Display}>{children}</div>;
+const Display = ({ displayValue }: DisplayProps) => {
+  return <div className={styles.Display}>{displayValue}</div>;
 };
 
 export default Display;
