@@ -10,6 +10,29 @@ export interface DisplayValues {
 }
 
 const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
+  const buttonsArray = [
+    { variant: 'operator', value: 'C' },
+    { variant: 'operator', value: '⌫' },
+    { variant: 'operator', value: '%' },
+    { variant: 'operator', value: '÷' },
+    { variant: 'number', value: '7' },
+    { variant: 'number', value: '8' },
+    { variant: 'number', value: '9' },
+    { variant: 'operator', value: 'x' },
+    { variant: 'number', value: '4' },
+    { variant: 'number', value: '5' },
+    { variant: 'number', value: '6' },
+    { variant: 'operator', value: '-' },
+    { variant: 'number', value: '1' },
+    { variant: 'number', value: '2' },
+    { variant: 'number', value: '3' },
+    { variant: 'operator', value: '+' },
+    { variant: 'number', value: '+/-' },
+    { variant: 'number', value: '0' },
+    { variant: 'number', value: '.' },
+    { variant: 'equal', value: '=' }
+  ];
+
   const updateDisplay = (e: any) => {
     const display = e.target.textContent;
 
@@ -24,26 +47,9 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
 
   return (
     <section className={styles.Buttons}>
-      <Button variant="operator" onClick={updateDisplay} value="C" />
-      <Button variant="operator" onClick={updateDisplay} value="⌫" />
-      <Button variant="operator" onClick={updateDisplay} value="%" />
-      <Button variant="operator" onClick={updateDisplay} value="÷" />
-      <Button variant="number" onClick={updateDisplay} value="7" />
-      <Button variant="number" onClick={updateDisplay} value="8" />
-      <Button variant="number" onClick={updateDisplay} value="9" />
-      <Button variant="operator" onClick={updateDisplay} value="&times;" />
-      <Button variant="number" onClick={updateDisplay} value="4" />
-      <Button variant="number" onClick={updateDisplay} value="5" />
-      <Button variant="number" onClick={updateDisplay} value="6" />
-      <Button variant="operator" onClick={updateDisplay} value="-" />
-      <Button variant="number" onClick={updateDisplay} value="1" />
-      <Button variant="number" onClick={updateDisplay} value="2" />
-      <Button variant="number" onClick={updateDisplay} value="3" />
-      <Button variant="operator" onClick={updateDisplay} value="+" />
-      <Button variant="number" onClick={updateDisplay} value="+/-" />
-      <Button variant="number" onClick={updateDisplay} value="0" />
-      <Button variant="number" onClick={updateDisplay} value="." />
-      <Button variant="equal" onClick={updateDisplay} value="=" />
+      {buttonsArray.map((btn, id) => (
+        <Button key={id} variant={btn.variant} value={btn.value} onClick={updateDisplay} />
+      ))}
     </section>
   );
 };
