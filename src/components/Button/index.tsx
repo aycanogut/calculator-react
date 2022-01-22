@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import styles from './Button.module.css';
 
-interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   value: string;
   variant: string;
 }
