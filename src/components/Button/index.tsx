@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import styles from './Button.module.css';
 
-export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   value: string;
   variant: string;
 }
@@ -15,8 +15,7 @@ interface variantProps {
 const variants: variantProps = {
   number: styles.Number,
   operator: styles.Operator,
-  equal: styles.Equal,
-  variant: 'string'
+  equal: styles.Equal
 };
 
 const Button = ({ value, variant, ...props }: ButtonProps) => {
