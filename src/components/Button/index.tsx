@@ -5,13 +5,18 @@ import styles from './Button.module.css';
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   value: string;
-  variant: 'number' | 'operator' | 'equal';
+  variant: string;
 }
 
-const variants = {
+interface variantProps {
+  [key: string]: string;
+}
+
+const variants: variantProps = {
   number: styles.Number,
   operator: styles.Operator,
-  equal: styles.Equal
+  equal: styles.Equal,
+  variant: 'string'
 };
 
 const Button = ({ value, variant, ...props }: ButtonProps) => {
