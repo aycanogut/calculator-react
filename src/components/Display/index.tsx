@@ -8,14 +8,19 @@ export interface DisplayProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const Display = ({ displayValue }: DisplayProps) => {
-  const [fontSize, setFontSize] = useState(false);
+  const [isSmallFont, setIsSmallFont] = useState(false);
 
   useEffect(() => {
-    displayValue.length < 10 ? setFontSize(true) : setFontSize(false);
+    displayValue.length < 10 ? setIsSmallFont(false) : setIsSmallFont(true);
   }, [displayValue]);
 
   return (
-    <div className={cx(styles.Display, !fontSize ? styles.SmallFont : '')}>{displayValue}</div>
+    <div
+      className={cx(styles.Display, {
+        [styles.SmallFont]: isSmallFont
+      })}>
+      {displayValue}
+    </div>
   );
 };
 
