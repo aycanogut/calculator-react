@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { DisplayValues } from '../Buttons';
+
 import Buttons from '../Buttons';
 
 import styles from './Buttons.module.css';
@@ -10,8 +12,8 @@ export default {
   component: Buttons
 };
 
-export const ButtonStory = () => (
+export const ButtonStory = (args: DisplayValues) => (
   <div className={styles.ButtonsStory}>
-    <Buttons />
+    <Buttons {...args} />
   </div>
 );

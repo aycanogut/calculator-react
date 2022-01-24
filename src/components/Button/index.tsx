@@ -1,23 +1,27 @@
-import React, { HTMLAttributes, ReactNode } from 'react';
+import React, { HTMLAttributes } from 'react';
 import cx from 'classnames';
 
 import styles from './Button.module.css';
 
-export interface Props extends HTMLAttributes<HTMLButtonElement> {
-  children: ReactNode;
-  variant: 'number' | 'operator' | 'equal';
+export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+  value: string;
+  variant: string;
 }
 
-const variants = {
+interface variantProps {
+  [key: string]: string;
+}
+
+const variants: variantProps = {
   number: styles.Number,
   operator: styles.Operator,
   equal: styles.Equal
 };
 
-const Button = ({ children, variant, className, ...props }: Props) => {
+const Button = ({ value, variant, ...props }: ButtonProps) => {
   return (
-    <button className={cx(styles.Button, variants[variant], className)} type="button" {...props}>
-      {children}
+    <button className={cx(styles.Button, variants[variant])} type="button" {...props}>
+      {value}
     </button>
   );
 };

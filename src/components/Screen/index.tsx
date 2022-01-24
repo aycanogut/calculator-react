@@ -1,13 +1,17 @@
 import React from 'react';
 
-import Input from '../Input';
+import Display from '../Display';
 
 import styles from './Screen.module.css';
 
-const Screen = () => {
+export interface ScreenProps extends React.HTMLAttributes<HTMLDivElement> {
+  displayValue: string;
+}
+
+const Screen = ({ displayValue }: ScreenProps) => {
   return (
     <section className={styles.Screen}>
-      <Input>{21}</Input>
+      <Display displayValue={displayValue} />
     </section>
   );
 };

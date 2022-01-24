@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Screen from '../Screen';
+import Screen, { ScreenProps } from '../Screen';
 
 import styles from './Screen.module.css';
 import '../../styles/global.css';
@@ -10,8 +10,8 @@ export default {
   component: Screen
 };
 
-export const ScreenStory = () => (
+export const ScreenStory = (args: ScreenProps) => (
   <div className={styles.ScreenStory}>
-    <Screen />
+    <Screen {...args} />
   </div>
 );

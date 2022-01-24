@@ -5,12 +5,12 @@ const iconSet = require('./selection.json');
 
 import styles from './Icon.module.css';
 
-export interface Props {
+export interface IconProps {
   icon: string;
   onClick?: MouseEventHandler<Element>;
 }
 
-const Icon = (props: Props) => {
+const Icon = (props: IconProps) => {
   return <IcoMoon iconSet={iconSet} className={styles.Icon} {...props} />;
 };
 
