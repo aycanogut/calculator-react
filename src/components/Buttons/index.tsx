@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { chars } from '../../utils/displayableChars';
-
 import Button from '../Button';
 
 import styles from './Buttons.module.css';
@@ -13,9 +11,9 @@ export interface DisplayValues {
 
 const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
   const buttonsArray = [
-    { variant: 'operator', value: 'C' },
-    { variant: 'operator', value: '⌫' },
-    { variant: 'operator', value: '%' },
+    { variant: 'operator', value: 'C', displayable: false },
+    { variant: 'operator', value: '⌫', displayable: false },
+    { variant: 'operator', value: '%', displayable: false },
     { variant: 'operator', value: '÷' },
     { variant: 'number', value: '7' },
     { variant: 'number', value: '8' },
@@ -29,16 +27,16 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
     { variant: 'number', value: '2' },
     { variant: 'number', value: '3' },
     { variant: 'operator', value: '+' },
-    { variant: 'number', value: '+/-' },
+    { variant: 'number', value: '+/-', displayable: false },
     { variant: 'number', value: '0' },
     { variant: 'number', value: '.' },
-    { variant: 'equal', value: '=' }
+    { variant: 'equal', value: '=', displayable: false }
   ];
 
   const updateDisplay = (e: any) => {
     const display = e.target.textContent;
 
-    if (displayValue.length < 16 && chars.includes(display)) {
+    if (displayValue.length < 16) {
       if (displayValue === '0') {
         setDisplayValue(display);
       } else {
@@ -47,7 +45,7 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
     }
 
     if (display === 'C') {
-      setDisplayValue('0');
+      setDisplayValue('');
     }
 
     if (display === '⌫') {
@@ -58,7 +56,6 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
 
   return (
     <section className={styles.Buttons}>
-      {console.log(displayValue)}
       {buttonsArray.map((btn, id) => (
         <Button key={id} variant={btn.variant} value={btn.value} onClick={updateDisplay} />
       ))}
