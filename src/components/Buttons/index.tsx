@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { chars } from '../../utils/displayableChars';
+
 import Button from '../Button';
 
 import styles from './Buttons.module.css';
@@ -36,7 +38,7 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
   const updateDisplay = (e: any) => {
     const display = e.target.textContent;
 
-    if (displayValue.length < 16) {
+    if (displayValue.length < 16 && chars.includes(display)) {
       if (displayValue === '0') {
         setDisplayValue(display);
       } else {
