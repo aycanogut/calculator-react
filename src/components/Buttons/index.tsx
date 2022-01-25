@@ -45,10 +45,20 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
         setDisplayValue(displayValue.concat(display));
       }
     }
+
+    if (display === 'C') {
+      setDisplayValue('0');
+    }
+
+    if (display === '⌫') {
+      const result = displayValue.substring(0, displayValue.length - 1);
+      setDisplayValue(result);
+    }
   };
 
   return (
     <section className={styles.Buttons}>
+      {console.log(displayValue)}
       {buttonsArray.map((btn, id) => (
         <Button key={id} variant={btn.variant} value={btn.value} onClick={updateDisplay} />
       ))}
