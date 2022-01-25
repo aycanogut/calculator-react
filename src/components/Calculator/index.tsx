@@ -13,7 +13,7 @@ export interface DisplayValues {
 const Calculator = ({ displayValue, setDisplayValue }: DisplayValues) => {
   return (
     <div className={styles.Calculator}>
-      <Screen displayValue={displayValue} setDisplayValue={setDisplayValue} />
+      <Screen displayValue={displayValue} />
       <Buttons displayValue={displayValue} setDisplayValue={setDisplayValue} />
     </div>
   );
