@@ -7,6 +7,6 @@
 }
 
 .SmallFont {
-  font-size: calc(var(--font-size) * 1.65);
-  margin-bottom: 1.35rem;
+  font-size: calc(var(--font-size) * 1.55);
+  margin-top: 1.45rem;
 }
