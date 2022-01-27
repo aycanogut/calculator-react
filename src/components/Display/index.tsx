@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import cx from 'classnames';
 
 import styles from './Display.module.css';
@@ -8,18 +8,14 @@ export interface DisplayProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const Display = ({ displayValue }: DisplayProps) => {
-  const [isSmallFont, setIsSmallFont] = useState(false);
-
-  useEffect(() => {
-    displayValue.length < 10 ? setIsSmallFont(false) : setIsSmallFont(true);
-  }, [displayValue]);
+  const isSmallFont = displayValue.length > 10;
 
   return (
     <div
       className={cx(styles.Display, {
         [styles.SmallFont]: isSmallFont
       })}>
-      {displayValue}
+      {displayValue || '0'}
     </div>
   );
 };
