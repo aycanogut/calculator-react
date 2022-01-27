@@ -39,6 +39,12 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
     setDisplayValue(String(-displayValue));
   };
 
+  const numberToFloat = () => {
+    if (!displayValue.includes('.')) {
+      setDisplayValue(displayValue + '.');
+    }
+  };
+
   const buttonsArray = [
     { variant: 'operator', value: 'C', action: clearDisplay },
     { variant: 'operator', value: '⌫', action: removeLastChar },
@@ -58,12 +64,13 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
     { variant: 'operator', value: '+', action: updateDisplay },
     { variant: 'number', value: '+/-', action: negateValue },
     { variant: 'number', value: '0', action: updateDisplay },
-    { variant: 'number', value: '.', action: updateDisplay },
+    { variant: 'number', value: '.', action: numberToFloat },
     { variant: 'equal', value: '=', action: updateDisplay }
   ];
 
   return (
     <section className={styles.Buttons}>
+      {console.log(displayValue)}
       {buttonsArray.map((btn, id) => (
         <Button key={id} variant={btn.variant} value={btn.value} onClick={btn.action} />
       ))}
