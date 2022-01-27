@@ -27,8 +27,7 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
   };
 
   const removeLastChar = () => {
-    const result = displayValue.substring(0, displayValue.length - 1);
-    setDisplayValue(result);
+    setDisplayValue(displayValue.substring(0, displayValue.length - 1));
   };
 
   const calculatePercent = () => {
@@ -70,7 +69,6 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
 
   return (
     <section className={styles.Buttons}>
-      {console.log(displayValue)}
       {buttonsArray.map((btn, id) => (
         <Button key={id} variant={btn.variant} value={btn.value} onClick={btn.action} />
       ))}
