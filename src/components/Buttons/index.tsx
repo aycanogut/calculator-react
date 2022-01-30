@@ -44,23 +44,29 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
     }
   };
 
+  const calculation = (e: any) => {
+    let inputValue = ` ${e.target.textContent} `;
+
+    setDisplayValue(inputValue);
+  };
+
   const buttonsArray = [
     { variant: 'operator', value: 'C', action: clearDisplay },
     { variant: 'operator', value: '⌫', action: removeLastChar },
     { variant: 'operator', value: '%', action: calculatePercent },
-    { variant: 'operator', value: '÷', action: updateDisplay },
+    { variant: 'operator', value: '÷', action: calculation },
     { variant: 'number', value: '7', action: updateDisplay },
     { variant: 'number', value: '8', action: updateDisplay },
     { variant: 'number', value: '9', action: updateDisplay },
-    { variant: 'operator', value: 'x', action: updateDisplay },
+    { variant: 'operator', value: 'x', action: calculation },
     { variant: 'number', value: '4', action: updateDisplay },
     { variant: 'number', value: '5', action: updateDisplay },
     { variant: 'number', value: '6', action: updateDisplay },
-    { variant: 'operator', value: '-', action: updateDisplay },
+    { variant: 'operator', value: '-', action: calculation },
     { variant: 'number', value: '1', action: updateDisplay },
     { variant: 'number', value: '2', action: updateDisplay },
     { variant: 'number', value: '3', action: updateDisplay },
-    { variant: 'operator', value: '+', action: updateDisplay },
+    { variant: 'operator', value: '+', action: calculation },
     { variant: 'number', value: '+/-', action: negateValue },
     { variant: 'number', value: '0', action: updateDisplay },
     { variant: 'number', value: '.', action: numberToFloat },
