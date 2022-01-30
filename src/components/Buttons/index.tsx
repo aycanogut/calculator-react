@@ -11,13 +11,13 @@ export interface DisplayValues {
 
 const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
   const updateDisplay = (e: any) => {
-    const display = e.target.textContent;
+    const inputValue = e.target.textContent;
 
     if (displayValue.length < 16) {
       if (displayValue === '0') {
-        setDisplayValue(display);
+        setDisplayValue(inputValue);
       } else {
-        setDisplayValue(displayValue.concat(display));
+        setDisplayValue(displayValue.concat(inputValue));
       }
     }
   };
