@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Button from '../Button';
 
@@ -10,6 +10,9 @@ export interface DisplayValues {
 }
 
 const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
+  const [prevValue, setPrevValue] = useState<string>();
+  const [currValue, setCurrValue] = useState<string>();
+
   const updateDisplay = (e: any) => {
     const inputValue = e.target.textContent;
 
@@ -31,7 +34,7 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
   };
 
   const calculatePercent = () => {
-    setDisplayValue(String(parseFloat(displayValue) / 100));
+    setDisplayValue(String(Number(displayValue) / 100));
   };
 
   const negateValue = () => {
@@ -47,8 +50,14 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
   const calculation = (e: any) => {
     let inputValue = ` ${e.target.textContent} `;
 
-    setDisplayValue(inputValue);
+    setDisplayValue(displayValue + inputValue);
+    setPrevValue(displayValue);
+
+    const displayArr = displayValue.split(' ');
+    setCurrValue(displayArr[displayArr.length - 1]);
   };
+
+  const equal = () => {};
 
   const buttonsArray = [
     { variant: 'operator', value: 'C', action: clearDisplay },
@@ -70,7 +79,7 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
     { variant: 'number', value: '+/-', action: negateValue },
     { variant: 'number', value: '0', action: updateDisplay },
     { variant: 'number', value: '.', action: numberToFloat },
-    { variant: 'equal', value: '=', action: updateDisplay }
+    { variant: 'equal', value: '=', action: equal }
   ];
 
   return (
