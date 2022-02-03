@@ -13,12 +13,12 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
   const updateDisplay = (e: any) => {
     const inputValue = e.target.textContent;
 
-    if (displayValue.length < 16) {
-      if (displayValue === '0') {
-        setDisplayValue(inputValue);
-      } else {
-        setDisplayValue(displayValue.concat(inputValue));
-      }
+    if (displayValue.length === 15) return;
+
+    if (displayValue === '0') {
+      setDisplayValue(inputValue);
+    } else {
+      setDisplayValue(displayValue.concat(inputValue));
     }
   };
 
@@ -26,18 +26,17 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
     const operatorValue = e.target.textContent;
     const latestChar = displayValue[displayValue.length - 1];
 
-    if (displayValue.length < 16) {
-      if (latestChar === '+' || latestChar === '-' || latestChar === 'x' || latestChar === '÷') {
-        setDisplayValue(displayValue.slice(0, -1) + operatorValue);
-      } else {
-        if (
-          !displayValue.includes('+') &&
-          !displayValue.includes('-') &&
-          !displayValue.includes('x') &&
-          !displayValue.includes('÷')
-        ) {
-          setDisplayValue(displayValue + operatorValue);
-        }
+    if (displayValue.length === 15) return;
+    if (latestChar === '+' || latestChar === '-' || latestChar === 'x' || latestChar === '÷') {
+      setDisplayValue(displayValue.slice(0, -1) + operatorValue);
+    } else {
+      if (
+        !displayValue.includes('+') &&
+        !displayValue.includes('-') &&
+        !displayValue.includes('x') &&
+        !displayValue.includes('÷')
+      ) {
+        setDisplayValue(displayValue + operatorValue);
       }
     }
   };
