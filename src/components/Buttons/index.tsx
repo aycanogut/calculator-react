@@ -25,7 +25,9 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
   const calculation = (e: any) => {
     const operatorValue = e.target.textContent;
     const latestChar = displayValue[displayValue.length - 1];
+
     if (displayValue.length === 15) return;
+
     if (['+x-÷'].includes(latestChar)) {
       setDisplayValue(displayValue.slice(0, -1) + operatorValue);
     } else {
