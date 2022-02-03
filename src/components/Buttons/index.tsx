@@ -27,15 +27,11 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
     const latestChar = displayValue[displayValue.length - 1];
 
     if (displayValue.length === 15) return;
-    if (latestChar === '+' || latestChar === '-' || latestChar === 'x' || latestChar === '÷') {
+
+    if (['+x-÷'].includes(latestChar)) {
       setDisplayValue(displayValue.slice(0, -1) + operatorValue);
     } else {
-      if (
-        !displayValue.includes('+') &&
-        !displayValue.includes('-') &&
-        !displayValue.includes('x') &&
-        !displayValue.includes('÷')
-      ) {
+      if (!/[x+%-]/g.test(displayValue)) {
         setDisplayValue(displayValue + operatorValue);
       }
     }
