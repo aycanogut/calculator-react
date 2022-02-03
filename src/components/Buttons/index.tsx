@@ -11,9 +11,9 @@ export interface DisplayValues {
 
 const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
   const updateDisplay = (e: any) => {
-    const inputValue = e.target.textContent;
-
     if (displayValue.length === 15) return;
+
+    const inputValue = e.target.textContent;
 
     if (displayValue === '0') {
       setDisplayValue(inputValue);
@@ -25,9 +25,7 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
   const calculation = (e: any) => {
     const operatorValue = e.target.textContent;
     const latestChar = displayValue[displayValue.length - 1];
-
     if (displayValue.length === 15) return;
-
     if (['+x-÷'].includes(latestChar)) {
       setDisplayValue(displayValue.slice(0, -1) + operatorValue);
     } else {
