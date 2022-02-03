@@ -30,7 +30,14 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
       if (latestChar === '+' || latestChar === '-' || latestChar === 'x' || latestChar === '÷') {
         setDisplayValue(displayValue.slice(0, -1) + operatorValue);
       } else {
-        setDisplayValue(`${displayValue} ${operatorValue} `);
+        if (
+          !displayValue.includes('+') &&
+          !displayValue.includes('-') &&
+          !displayValue.includes('x') &&
+          !displayValue.includes('÷')
+        ) {
+          setDisplayValue(displayValue + operatorValue);
+        }
       }
     }
   };
