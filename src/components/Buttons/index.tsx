@@ -37,8 +37,12 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
     }
   };
 
+  const clearDisplay = () => {
+    setDisplayValue('');
+  };
+
   const buttonsArray = [
-    { variant: 'operator', value: 'C', action: undefined },
+    { variant: 'operator', value: 'C', action: clearDisplay },
     { variant: 'operator', value: '⌫', action: undefined },
     { variant: 'operator', value: '%', action: undefined },
     { variant: 'operator', value: '÷', action: calculation },
