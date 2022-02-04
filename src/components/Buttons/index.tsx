@@ -28,7 +28,7 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
 
     if (displayValue.length === 15) return;
 
-    if (['+x-÷'].includes(latestChar)) {
+    if ('+x-÷'.includes(latestChar)) {
       setDisplayValue(displayValue.slice(0, -1) + operatorValue);
     } else {
       if (!/[x+%-]/g.test(displayValue)) {
