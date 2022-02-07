@@ -31,7 +31,7 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
     if ('+x-÷'.includes(latestChar)) {
       setDisplayValue(displayValue.slice(0, -1) + operatorValue);
     } else {
-      if (!/[x+%-]/g.test(displayValue)) {
+      if (!/[x+÷-]/g.test(displayValue)) {
         setDisplayValue(displayValue + operatorValue);
       }
     }
