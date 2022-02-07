@@ -25,19 +25,29 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
   const calculation = (e: any) => {
     const operatorValue = e.target.textContent;
     const latestChar = displayValue[displayValue.length - 1];
+
     if (displayValue.length === 15) return;
-    if (['+x-÷'].includes(latestChar)) {
+
+    if ('+x-÷'.includes(latestChar)) {
       setDisplayValue(displayValue.slice(0, -1) + operatorValue);
     } else {
-      if (!/[x+%-]/g.test(displayValue)) {
+      if (!/[x+÷-]/g.test(displayValue)) {
         setDisplayValue(displayValue + operatorValue);
       }
     }
   };
 
+  const clearDisplay = () => {
+    setDisplayValue('');
+  };
+
+  const removeLastValue = () => {
+    setDisplayValue(displayValue.substring(0, displayValue.length - 1));
+  };
+
   const buttonsArray = [
-    { variant: 'operator', value: 'C', action: undefined },
-    { variant: 'operator', value: '⌫', action: undefined },
+    { variant: 'operator', value: 'C', action: clearDisplay },
+    { variant: 'operator', value: '⌫', action: removeLastValue },
     { variant: 'operator', value: '%', action: undefined },
     { variant: 'operator', value: '÷', action: calculation },
     { variant: 'number', value: '7', action: updateDisplay },
