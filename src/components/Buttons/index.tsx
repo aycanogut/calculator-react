@@ -45,10 +45,14 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
     setDisplayValue(displayValue.substring(0, displayValue.length - 1));
   };
 
+  const calculatePercent = () => {
+    setDisplayValue(Number(displayValue) / 100);
+  };
+
   const buttonsArray = [
     { variant: 'operator', value: 'C', action: clearDisplay },
     { variant: 'operator', value: '⌫', action: removeLastValue },
-    { variant: 'operator', value: '%', action: undefined },
+    { variant: 'operator', value: '%', action: calculatePercent },
     { variant: 'operator', value: '÷', action: calculation },
     { variant: 'number', value: '7', action: updateDisplay },
     { variant: 'number', value: '8', action: updateDisplay },
