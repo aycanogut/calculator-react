@@ -49,6 +49,10 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
     setDisplayValue(Number(displayValue) / 100);
   };
 
+  const negateValue = () => {
+    setDisplayValue(Number(-displayValue));
+  };
+
   const buttonsArray = [
     { variant: 'operator', value: 'C', action: clearDisplay },
     { variant: 'operator', value: '⌫', action: removeLastValue },
@@ -66,7 +70,7 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
     { variant: 'number', value: '2', action: updateDisplay },
     { variant: 'number', value: '3', action: updateDisplay },
     { variant: 'operator', value: '+', action: calculation },
-    { variant: 'number', value: '+/-', action: undefined },
+    { variant: 'number', value: '+/-', action: negateValue },
     { variant: 'number', value: '0', action: updateDisplay },
     { variant: 'number', value: '.', action: undefined },
     { variant: 'equal', value: '=', action: undefined }
