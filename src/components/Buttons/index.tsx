@@ -46,11 +46,11 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
   };
 
   const calculatePercent = () => {
-    setDisplayValue(Number(displayValue) / 100);
+    setDisplayValue(String(Number(displayValue) / 100));
   };
 
   const negateValue = () => {
-    setDisplayValue(Number(-displayValue));
+    setDisplayValue(String(Number(-displayValue)));
   };
 
   const buttonsArray = [
