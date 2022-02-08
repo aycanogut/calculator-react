@@ -53,7 +53,7 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
     setDisplayValue(String(Number(-displayValue)));
   };
 
-  const numberToFloat = () => {
+  const numberToDecimal = () => {
     if (!displayValue.includes('.')) {
       setDisplayValue(displayValue + '.');
     }
@@ -78,7 +78,7 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
     { variant: 'operator', value: '+', action: calculation },
     { variant: 'number', value: '+/-', action: negateValue },
     { variant: 'number', value: '0', action: updateDisplay },
-    { variant: 'number', value: '.', action: numberToFloat },
+    { variant: 'number', value: '.', action: numberToDecimal },
     { variant: 'equal', value: '=', action: undefined }
   ];
 
