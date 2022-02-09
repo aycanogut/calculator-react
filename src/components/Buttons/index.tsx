@@ -59,6 +59,8 @@ const Buttons = ({
   };
 
   const equal = () => {
+    if (operator === '') return;
+
     setSubDisplayValue(firstValue + ' ' + operator + ' ' + displayValue + ' ' + '=');
     setDisplayValue(Number(firstValue) + Number(displayValue));
   };
