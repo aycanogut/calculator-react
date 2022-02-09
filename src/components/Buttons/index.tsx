@@ -7,9 +7,16 @@ import styles from './Buttons.module.css';
 export interface DisplayValues {
   displayValue: string;
   setDisplayValue: Function;
+  subDisplayValue: string;
+  setSubDisplayValue: Function;
 }
 
-const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
+const Buttons = ({
+  displayValue,
+  setDisplayValue,
+  subDisplayValue,
+  setSubDisplayValue
+}: DisplayValues) => {
   const updateDisplay = (e: any) => {
     if (displayValue.length === 15) return;
 

@@ -21,7 +21,12 @@ const Calculator = ({
   return (
     <div className={styles.Calculator}>
       <Screen displayValue={displayValue} subDisplayValue={subDisplayValue} />
-      <Buttons displayValue={displayValue} setDisplayValue={setDisplayValue} />
+      <Buttons
+        displayValue={displayValue}
+        setDisplayValue={setDisplayValue}
+        subDisplayValue={subDisplayValue}
+        setSubDisplayValue={setSubDisplayValue}
+      />
     </div>
   );
 };
