@@ -1,6 +1,9 @@
 .Display {
-  display: block;
-  margin: 15px 8px 15px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 75px;
+  padding: 0 0 10px 0;
   font-size: var(--font-size);
   font-weight: 700;
   color: var(--color-text-primary);
@@ -8,5 +11,4 @@
 
 .SmallFont {
   font-size: var(--font-size-small);
-  margin-top: 24px;
 }
