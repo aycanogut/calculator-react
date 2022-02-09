@@ -34,16 +34,19 @@ const Buttons = ({
 
   const calculation = (e: any) => {
     const operatorValue = e.target.textContent;
-    const latestChar = displayValue[displayValue.length - 1];
+    setOperator(operatorValue);
 
     if (displayValue.length === 16) return;
 
-    if ('+x-÷'.includes(latestChar)) {
-      setDisplayValue(displayValue.slice(0, -1) + operatorValue);
-    } else {
-      if (!/[x+÷-]/g.test(displayValue)) {
-        setDisplayValue(displayValue + operatorValue);
-      }
+    if (displayValue && subDisplayValue) return;
+    else if (displayValue !== '') {
+      setSubDisplayValue(displayValue + ' ' + operatorValue);
+      setFirstValue(displayValue);
+      setDisplayValue('');
+
+      // update subDisplayValue operator
+    } else if (subDisplayValue && !displayValue) {
+      setSubDisplayValue(firstValue + ' ' + operatorValue);
     }
   };
 
