@@ -12,12 +12,15 @@ const Display = ({ displayValue, subDisplayValue }: DisplayProps) => {
   const isSmallFont = displayValue.length > 10;
 
   return (
-    <div
-      className={cx(styles.Display, {
-        [styles.SmallFont]: isSmallFont
-      })}>
-      {displayValue || '0'}
-    </div>
+    <section className={styles.Display}>
+      <div className={styles.SubValue}>{subDisplayValue}</div>
+      <div
+        className={cx(styles.Value, {
+          [styles.SmallFont]: isSmallFont
+        })}>
+        {displayValue || '0'}
+      </div>
+    </section>
   );
 };
 
