@@ -58,6 +58,11 @@ const Buttons = ({
     setDisplayValue(displayValue.substring(0, displayValue.length - 1));
   };
 
+  const equal = () => {
+    setSubDisplayValue(firstValue + ' ' + operator + ' ' + displayValue + ' ' + '=');
+    setDisplayValue(Number(firstValue) + Number(displayValue));
+  };
+
   const buttonsArray = [
     { variant: 'operator', value: 'C', action: clearDisplay },
     { variant: 'operator', value: '⌫', action: removeLastValue },
@@ -78,7 +83,7 @@ const Buttons = ({
     { variant: 'number', value: '+/-', action: undefined },
     { variant: 'number', value: '0', action: updateDisplay },
     { variant: 'number', value: '.', action: undefined },
-    { variant: 'equal', value: '=', action: undefined }
+    { variant: 'equal', value: '=', action: equal }
   ];
 
   return (
