@@ -18,7 +18,7 @@ const Buttons = ({
   setSubDisplayValue
 }: DisplayValues) => {
   const updateDisplay = (e: any) => {
-    if (displayValue.length === 15) return;
+    if (displayValue.length === 16) return;
 
     const inputValue = e.target.textContent;
 
@@ -33,7 +33,7 @@ const Buttons = ({
     const operatorValue = e.target.textContent;
     const latestChar = displayValue[displayValue.length - 1];
 
-    if (displayValue.length === 15) return;
+    if (displayValue.length === 16) return;
 
     if ('+x-÷'.includes(latestChar)) {
       setDisplayValue(displayValue.slice(0, -1) + operatorValue);
