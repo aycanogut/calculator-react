@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Button from '../Button';
 
@@ -17,6 +17,9 @@ const Buttons = ({
   subDisplayValue,
   setSubDisplayValue
 }: DisplayValues) => {
+  const [firstValue, setFirstValue] = useState<string>('');
+  const [operator, setOperator] = useState<string>('');
+
   const updateDisplay = (e: any) => {
     if (displayValue.length === 16) return;
 
