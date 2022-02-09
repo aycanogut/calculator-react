@@ -8,12 +8,19 @@ import styles from './Calculator.module.css';
 export interface DisplayValues {
   displayValue: string;
   setDisplayValue: Function;
+  subDisplayValue: string;
+  setSubDisplayValue: Function;
 }
 
-const Calculator = ({ displayValue, setDisplayValue }: DisplayValues) => {
+const Calculator = ({
+  displayValue,
+  setDisplayValue,
+  subDisplayValue,
+  setSubDisplayValue
+}: DisplayValues) => {
   return (
     <div className={styles.Calculator}>
-      <Screen displayValue={displayValue} />
+      <Screen displayValue={displayValue} subDisplayValue={subDisplayValue} />
       <Buttons displayValue={displayValue} setDisplayValue={setDisplayValue} />
     </div>
   );

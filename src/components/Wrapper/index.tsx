@@ -13,12 +13,18 @@ const Wrapper = () => {
   const isCalculator = view === LayoutTypes.Calculator;
 
   const [displayValue, setDisplayValue] = useState<string>('0');
+  const [subDisplayValue, setSubDisplayValue] = useState<string>('');
 
   return (
     <div className={styles.Wrapper}>
       <Header view={view} setView={setView} />
       {isCalculator ? (
-        <Calculator displayValue={displayValue} setDisplayValue={setDisplayValue} />
+        <Calculator
+          displayValue={displayValue}
+          setDisplayValue={setDisplayValue}
+          subDisplayValue={subDisplayValue}
+          setSubDisplayValue={setSubDisplayValue}
+        />
       ) : (
         <History />
       )}

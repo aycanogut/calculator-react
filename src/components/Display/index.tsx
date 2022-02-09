@@ -5,9 +5,10 @@ import styles from './Display.module.css';
 
 export interface DisplayProps extends React.HTMLAttributes<HTMLDivElement> {
   displayValue: string;
+  subDisplayValue: string;
 }
 
-const Display = ({ displayValue }: DisplayProps) => {
+const Display = ({ displayValue, subDisplayValue }: DisplayProps) => {
   const isSmallFont = displayValue.length > 10;
 
   return (
