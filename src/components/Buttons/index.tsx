@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Button from '../Button';
 
@@ -17,8 +17,6 @@ const Buttons = ({
   subDisplayValue,
   setSubDisplayValue
 }: DisplayValues) => {
-  const [firstValue, setFirstValue] = useState<string>('');
-
   const updateDisplay = (e: any) => {
     if (displayValue.length === 16) return;
 
@@ -31,18 +29,24 @@ const Buttons = ({
     }
   };
 
-  const calculation = (e: any) => {
-    const operatorValue = e.target.textContent;
-
+  const handleOperator = (e: any) => {
     if (displayValue.length === 16) return;
 
-    if (displayValue && subDisplayValue) return;
-    else if (displayValue !== '') {
-      setSubDisplayValue(displayValue + ' ' + operatorValue);
-      setFirstValue(displayValue);
+    const operatorValue = e.target.textContent;
+
+    const isEqual = operatorValue === '=';
+
+    if (!isEqual && displayValue && subDisplayValue) return;
+
+    if (isEqual && displayValue) {
+      setSubDisplayValue(`${subDisplayValue} ${displayValue} ${operatorValue}`);
       setDisplayValue('');
-    } else if (subDisplayValue && !displayValue) {
-      setSubDisplayValue(firstValue + ' ' + operatorValue);
+    } else if (displayValue !== '') {
+      setSubDisplayValue(`${displayValue} ${operatorValue}`);
+      setDisplayValue('');
+    } else if (subDisplayValue && !displayValue && !isEqual) {
+      subDisplayValue = subDisplayValue.slice(0, subDisplayValue.length - 1) + operatorValue;
+      setSubDisplayValue(subDisplayValue);
     }
   };
 
@@ -58,23 +62,23 @@ const Buttons = ({
     { variant: 'operator', value: 'C', action: clearDisplay },
     { variant: 'operator', value: '⌫', action: removeLastValue },
     { variant: 'operator', value: '%', action: undefined },
-    { variant: 'operator', value: '÷', action: calculation },
+    { variant: 'operator', value: '÷', action: handleOperator },
     { variant: 'number', value: '7', action: updateDisplay },
     { variant: 'number', value: '8', action: updateDisplay },
     { variant: 'number', value: '9', action: updateDisplay },
-    { variant: 'operator', value: 'x', action: calculation },
+    { variant: 'operator', value: 'x', action: handleOperator },
     { variant: 'number', value: '4', action: updateDisplay },
     { variant: 'number', value: '5', action: updateDisplay },
     { variant: 'number', value: '6', action: updateDisplay },
-    { variant: 'operator', value: '-', action: calculation },
+    { variant: 'operator', value: '-', action: handleOperator },
     { variant: 'number', value: '1', action: updateDisplay },
     { variant: 'number', value: '2', action: updateDisplay },
     { variant: 'number', value: '3', action: updateDisplay },
-    { variant: 'operator', value: '+', action: calculation },
+    { variant: 'operator', value: '+', action: handleOperator },
     { variant: 'number', value: '+/-', action: undefined },
     { variant: 'number', value: '0', action: updateDisplay },
     { variant: 'number', value: '.', action: undefined },
-    { variant: 'equal', value: '=', action: undefined }
+    { variant: 'equal', value: '=', action: handleOperator }
   ];
 
   return (
