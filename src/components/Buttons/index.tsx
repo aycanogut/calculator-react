@@ -11,7 +11,7 @@ export interface DisplayValues {
 
 const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
   const updateDisplay = (e: any) => {
-    if (displayValue.length === 15) return;
+    if (displayValue.length === 16) return;
 
     const inputValue = e.target.textContent;
 
@@ -25,7 +25,7 @@ const Buttons = ({ displayValue, setDisplayValue }: DisplayValues) => {
   const calculation = (e: any) => {
     const operatorValue = e.target.textContent;
 
-    if (displayValue.length === 15) return;
+    if (displayValue.length === 16) return;
   };
 
   const clearDisplay = () => {
