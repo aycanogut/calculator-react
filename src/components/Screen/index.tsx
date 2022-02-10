@@ -6,12 +6,13 @@ import styles from './Screen.module.css';
 
 export interface ScreenProps extends React.HTMLAttributes<HTMLDivElement> {
   displayValue: string;
+  subDisplayValue: string;
 }
 
-const Screen = ({ displayValue }: ScreenProps) => {
+const Screen = ({ displayValue, subDisplayValue }: ScreenProps) => {
   return (
     <section className={styles.Screen}>
-      <Display displayValue={displayValue} />
+      <Display displayValue={displayValue} subDisplayValue={subDisplayValue} />
     </section>
   );
 };
