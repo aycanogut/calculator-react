@@ -4,7 +4,7 @@
   /* colors */
   --color-black: #000;
   --color-text-primary: #fff;
-  --color-text-secondary: #9b9b9c;
+  --color-text-secondary: #9f9fa0;
   --color-background: #221f1f;
   --color-input: #1d1d1d;
   --color-border: #3e3e41;
@@ -16,9 +16,10 @@
 
   /* typo */
   --font-family: 'Roboto', sans-serif;
+  --font-size-xsmall: 14px;
+  --font-size-small: 24px;
   --font-size: 32px;
   --font-size-button: 16px;
-  --font-size-small: 24px;
   --font-weight: 400;
 }
 
