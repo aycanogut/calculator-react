@@ -52,6 +52,7 @@ const Buttons = ({
 
   const clearDisplay = () => {
     setDisplayValue('');
+    setSubDisplayValue('');
   };
 
   const removeLastValue = () => {
