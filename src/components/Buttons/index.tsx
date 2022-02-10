@@ -45,8 +45,7 @@ const Buttons = ({
       setSubDisplayValue(`${displayValue} ${operatorValue}`);
       setDisplayValue('');
     } else if (subDisplayValue && !displayValue && !isEqual) {
-      subDisplayValue = subDisplayValue.slice(0, subDisplayValue.length - 1) + operatorValue;
-      setSubDisplayValue(subDisplayValue);
+      setSubDisplayValue(subDisplayValue.slice(0, -1) + operatorValue);
     }
   };
 
