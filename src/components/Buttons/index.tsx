@@ -37,6 +37,7 @@ const Buttons = ({
     const isEqual = operatorValue === '=';
 
     if (!isEqual && displayValue && subDisplayValue) return;
+    if (!isEqual && subDisplayValue.includes('=')) return;
 
     if (isEqual && displayValue) {
       setSubDisplayValue(`${subDisplayValue} ${displayValue} ${operatorValue}`);
