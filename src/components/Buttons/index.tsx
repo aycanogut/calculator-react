@@ -35,6 +35,15 @@ const Buttons = ({
     const operatorValue = e.target.textContent;
 
     if (displayValue.length === 16) return;
+
+    if (displayValue && subDisplayValue) return;
+    else if (displayValue !== '') {
+      setSubDisplayValue(displayValue + ' ' + operatorValue);
+      setFirstValue(displayValue);
+      setDisplayValue('');
+    } else if (subDisplayValue && !displayValue) {
+      setSubDisplayValue(firstValue + ' ' + operatorValue);
+    }
   };
 
   const clearDisplay = () => {
