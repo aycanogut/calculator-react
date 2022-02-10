@@ -1,12 +1,24 @@
 .Display {
-  display: block;
-  margin: 15px 8px 15px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 75px;
+  padding: 0 8px 10px 0;
   font-size: var(--font-size);
   font-weight: 700;
   color: var(--color-text-primary);
 }
 
+.Value {
+  margin: 10px 0 0 0;
+}
+
+.SubValue {
+  height: 16px;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xsmall);
+}
+
 .SmallFont {
   font-size: var(--font-size-small);
-  margin-top: 24px;
 }
