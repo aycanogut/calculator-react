@@ -17,6 +17,8 @@ const Buttons = ({
   subDisplayValue,
   setSubDisplayValue
 }: DisplayValues) => {
+  const [firstValue, setFirstValue] = useState<string>('');
+
   const updateDisplay = (e: any) => {
     if (displayValue.length === 16) return;
 
