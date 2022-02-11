@@ -22,7 +22,7 @@ const Buttons = ({
 
     const inputValue = e.target.textContent;
 
-    if (displayValue === '0') {
+    if (!displayValue) {
       setDisplayValue(inputValue);
     } else {
       setDisplayValue(displayValue.concat(inputValue));
@@ -39,10 +39,10 @@ const Buttons = ({
     if (!isEqual && displayValue && subDisplayValue) return;
     if (!isEqual && subDisplayValue.includes('=')) return;
 
-    if (isEqual && displayValue) {
+    if (isEqual && displayValue && subDisplayValue) {
       setSubDisplayValue(`${subDisplayValue} ${displayValue} ${operatorValue}`);
       setDisplayValue('');
-    } else if (displayValue !== '') {
+    } else if (!isEqual && displayValue) {
       setSubDisplayValue(`${displayValue} ${operatorValue}`);
       setDisplayValue('');
     } else if (subDisplayValue && !displayValue && !isEqual) {
