@@ -11,5 +11,5 @@ export default {
 
 // variants
 export const Number = () => <Button variant="number" value="1" />;
-export const Operator = () => <Button variant="number" value="+" />;
-export const Equal = () => <Button variant="number" value="=" />;
+export const Operator = () => <Button variant="operator" value="+" />;
+export const Equal = () => <Button variant="equal" value="=" />;

@@ -12,8 +12,8 @@ const Wrapper = () => {
   const [view, setView] = useState(LayoutTypes.Calculator);
   const isCalculator = view === LayoutTypes.Calculator;
 
-  const [displayValue, setDisplayValue] = useState<string>('0');
-  const [subDisplayValue, setSubDisplayValue] = useState<string>('');
+  const [displayValue, setDisplayValue] = useState('');
+  const [subDisplayValue, setSubDisplayValue] = useState('');
 
   return (
     <div className={styles.Wrapper}>

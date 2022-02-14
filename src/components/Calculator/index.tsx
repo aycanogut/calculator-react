@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Screen from '../Screen';
-import Buttons from '../Buttons';
+import Buttons from '../Keyboard';
 
 import styles from './Calculator.module.css';
 

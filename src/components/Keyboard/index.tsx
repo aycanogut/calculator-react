@@ -2,7 +2,7 @@ import React from 'react';
 
 import Button from '../Button';
 
-import styles from './Buttons.module.css';
+import styles from './Keyboard.module.css';
 
 export interface DisplayValues {
   displayValue: string;
@@ -11,7 +11,7 @@ export interface DisplayValues {
   setSubDisplayValue: Function;
 }
 
-const Buttons = ({
+const Keyboard = ({
   displayValue,
   setDisplayValue,
   subDisplayValue,
@@ -22,7 +22,7 @@ const Buttons = ({
 
     const inputValue = e.target.textContent;
 
-    if (displayValue === '0') {
+    if (!displayValue) {
       setDisplayValue(inputValue);
     } else {
       setDisplayValue(displayValue.concat(inputValue));
@@ -39,10 +39,10 @@ const Buttons = ({
     if (!isEqual && displayValue && subDisplayValue) return;
     if (!isEqual && subDisplayValue.includes('=')) return;
 
-    if (isEqual && displayValue) {
+    if (isEqual && displayValue && subDisplayValue) {
       setSubDisplayValue(`${subDisplayValue} ${displayValue} ${operatorValue}`);
       setDisplayValue('');
-    } else if (displayValue !== '') {
+    } else if (!isEqual && displayValue) {
       setSubDisplayValue(`${displayValue} ${operatorValue}`);
       setDisplayValue('');
     } else if (subDisplayValue && !displayValue && !isEqual) {
@@ -76,14 +76,14 @@ const Buttons = ({
     { variant: 'number', value: '2', action: updateDisplay },
     { variant: 'number', value: '3', action: updateDisplay },
     { variant: 'operator', value: '+', action: handleOperator },
-    { variant: 'number', value: '+/-', action: undefined },
+    { variant: 'operator', value: '±', action: undefined },
     { variant: 'number', value: '0', action: updateDisplay },
-    { variant: 'number', value: '.', action: undefined },
+    { variant: 'operator', value: '.', action: undefined },
     { variant: 'equal', value: '=', action: handleOperator }
   ];
 
   return (
-    <section className={styles.Buttons}>
+    <section className={styles.Keyboard}>
       {buttonsArray.map((btn, id) => (
         <Button key={id} variant={btn.variant} value={btn.value} onClick={btn.action} />
       ))}
@@ -91,4 +91,4 @@ const Buttons = ({
   );
 };
 
-export default Buttons;
+export default Keyboard;
