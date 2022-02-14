@@ -76,10 +76,10 @@ const Keyboard = ({
     { variant: 'number', value: '2', action: updateDisplay },
     { variant: 'number', value: '3', action: updateDisplay },
     { variant: 'operator', value: '+', action: handleOperator },
-    { variant: 'number', value: '±', action: undefined },
+    { variant: 'operator', value: '±', action: undefined },
     { variant: 'number', value: '0', action: updateDisplay },
-    { variant: 'number', value: '.', action: undefined },
-    { variant: 'equal', value: '=', action: handleOperator }
+    { variant: 'operator', value: '.', action: undefined },
+    { variant: 'operator', value: '=', action: handleOperator }
   ];
 
   const operators = ['+', '-', 'x', '÷', 'C', '⌫', '%', '±', '.', '='];
