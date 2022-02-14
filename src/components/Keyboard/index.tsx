@@ -2,7 +2,7 @@ import React from 'react';
 
 import Button from '../Button';
 
-import styles from './Buttons.module.css';
+import styles from './Keyboard.module.css';
 
 export interface DisplayValues {
   displayValue: string;
@@ -11,7 +11,7 @@ export interface DisplayValues {
   setSubDisplayValue: Function;
 }
 
-const Buttons = ({
+const Keyboard = ({
   displayValue,
   setDisplayValue,
   subDisplayValue,
@@ -83,7 +83,7 @@ const Buttons = ({
   ];
 
   return (
-    <section className={styles.Buttons}>
+    <section className={styles.Keyboard}>
       {buttonsArray.map((btn, id) => (
         <Button key={id} variant={btn.variant} value={btn.value} onClick={btn.action} />
       ))}
@@ -91,4 +91,4 @@ const Buttons = ({
   );
 };
 
-export default Buttons;
+export default Keyboard;
