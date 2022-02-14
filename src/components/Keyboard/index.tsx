@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { getButtonType } from '../../utils/getButtonType';
+
 import Button from '../Button';
 
 import styles from './Keyboard.module.css';
@@ -79,11 +81,12 @@ const Keyboard = ({
     { variant: 'operator', value: '±', action: undefined },
     { variant: 'number', value: '0', action: updateDisplay },
     { variant: 'operator', value: '.', action: undefined },
-    { variant: 'operator', value: '=', action: handleOperator }
+    { variant: 'equal', value: '=', action: handleOperator }
   ];
 
-  const operators: string[] = ['+', '-', 'x', '÷', 'C', '⌫', '%', '±', '.', '='];
+  const operators: string[] = ['+', '-', 'x', '÷', 'C', '⌫', '%', '±', '.'];
   const numbers: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  const equal: string[] = ['='];
 
   return (
     <section className={styles.Keyboard}>
