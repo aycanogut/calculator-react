@@ -23,15 +23,17 @@ const Keyboard = ({
     const inputValue = e.target.textContent;
     const buttonType = getButtonType(inputValue);
 
-    const secondaryOperators = new RegExp(/([C⌫%±.])/);
-
-    if (buttonType === 'number') updateDisplay(inputValue);
-    if (buttonType === 'operator' && !secondaryOperators.test(inputValue))
+    if (buttonType === 'number') {
+      updateDisplay(inputValue);
+    } else if (inputValue === 'C' && buttonType === 'operator') {
+      clearDisplay();
+    } else if (inputValue === '⌫' && buttonType === 'operator') {
+      removeLastValue();
+    } else if (buttonType === 'operator') {
       handleOperator(inputValue);
-    if (buttonType === 'equal') handleOperator(inputValue);
-
-    if (inputValue === 'C') clearDisplay();
-    if (inputValue === '⌫') removeLastValue();
+    } else if (buttonType === 'equal') {
+      handleOperator(inputValue);
+    }
   };
 
   const updateDisplay = (inputValue: string) => {
