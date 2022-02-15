@@ -72,7 +72,7 @@ const Keyboard = ({
     setDisplayValue(displayValue.substring(0, displayValue.length - 1));
   };
 
-  const keywordButtons = [
+  const keyboardButtons = [
     ['C', '⌫', '%', '÷'],
     ['7', '8', '9', 'x'],
     ['4', '5', '6', '-'],
@@ -82,7 +82,7 @@ const Keyboard = ({
 
   return (
     <section className={styles.Keyboard}>
-      {keywordButtons.map((val) => (
+      {keyboardButtons.map((val) => (
         <Button key={val} variant={getButtonType(val)} value={val} onClick={handleClick} />
       ))}
     </section>
