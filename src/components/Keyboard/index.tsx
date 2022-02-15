@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { getButtonType } from '../../utils/getButtonType';
+
 import Button from '../Button';
 
 import styles from './Keyboard.module.css';
