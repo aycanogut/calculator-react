@@ -19,10 +19,23 @@ const Keyboard = ({
   subDisplayValue,
   setSubDisplayValue
 }: DisplayValues) => {
-  const updateDisplay = (e: any) => {
-    if (displayValue.length === 16) return;
-
+  const handleClick = (e: any) => {
     const inputValue = e.target.textContent;
+    const buttonType = getButtonType(inputValue);
+
+    const secondaryOperators = new RegExp(/([C⌫%±.])/);
+
+    if (buttonType === 'number') updateDisplay(inputValue);
+    if (buttonType === 'operator' && !secondaryOperators.test(inputValue))
+      handleOperator(inputValue);
+    if (buttonType === 'equal') handleOperator(inputValue);
+
+    if (inputValue === 'C') clearDisplay();
+    if (inputValue === '⌫') removeLastValue();
+  };
+
+  const updateDisplay = (inputValue: string) => {
+    if (displayValue.length === 16) return;
 
     if (!displayValue) {
       setDisplayValue(inputValue);
@@ -31,10 +44,8 @@ const Keyboard = ({
     }
   };
 
-  const handleOperator = (e: any) => {
+  const handleOperator = (operatorValue: string) => {
     if (displayValue.length === 16) return;
-
-    const operatorValue = e.target.textContent;
 
     const isEqual = operatorValue === '=';
 
@@ -72,7 +83,7 @@ const Keyboard = ({
   return (
     <section className={styles.Keyboard}>
       {keywordButtons.map((val) => (
-        <Button key={val} variant={getButtonType(val)} value={val} />
+        <Button key={val} variant={getButtonType(val)} value={val} onClick={handleClick} />
       ))}
     </section>
   );
