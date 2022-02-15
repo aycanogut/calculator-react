@@ -23,15 +23,13 @@ const Keyboard = ({
     const inputValue = e.target.textContent;
     const buttonType = getButtonType(inputValue);
 
-    if (buttonType === 'number') {
-      updateDisplay(inputValue);
-    } else if (inputValue === 'C' && buttonType === 'operator') {
+    if (inputValue === 'C') {
       clearDisplay();
-    } else if (inputValue === '⌫' && buttonType === 'operator') {
+    } else if (inputValue === '⌫') {
       removeLastValue();
-    } else if (buttonType === 'operator') {
-      handleOperator(inputValue);
-    } else if (buttonType === 'equal') {
+    } else if (buttonType === 'number') {
+      updateDisplay(inputValue);
+    } else if (buttonType === 'operator' || buttonType === 'equal') {
       handleOperator(inputValue);
     }
   };
