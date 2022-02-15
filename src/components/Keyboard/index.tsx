@@ -59,28 +59,13 @@ const Keyboard = ({
     setDisplayValue(displayValue.substring(0, displayValue.length - 1));
   };
 
-  const buttonsArray = [
-    { variant: 'operator', value: 'C', action: clearDisplay },
-    { variant: 'operator', value: '⌫', action: removeLastValue },
-    { variant: 'operator', value: '%', action: undefined },
-    { variant: 'operator', value: '÷', action: handleOperator },
-    { variant: 'number', value: '7', action: updateDisplay },
-    { variant: 'number', value: '8', action: updateDisplay },
-    { variant: 'number', value: '9', action: updateDisplay },
-    { variant: 'operator', value: 'x', action: handleOperator },
-    { variant: 'number', value: '4', action: updateDisplay },
-    { variant: 'number', value: '5', action: updateDisplay },
-    { variant: 'number', value: '6', action: updateDisplay },
-    { variant: 'operator', value: '-', action: handleOperator },
-    { variant: 'number', value: '1', action: updateDisplay },
-    { variant: 'number', value: '2', action: updateDisplay },
-    { variant: 'number', value: '3', action: updateDisplay },
-    { variant: 'operator', value: '+', action: handleOperator },
-    { variant: 'operator', value: '±', action: undefined },
-    { variant: 'number', value: '0', action: updateDisplay },
-    { variant: 'operator', value: '.', action: undefined },
-    { variant: 'equal', value: '=', action: handleOperator }
-  ];
+  const keywordButtons = [
+    ['C', '⌫', '%', '÷'],
+    ['7', '8', '9', 'x'],
+    ['4', '5', '6', '-'],
+    ['1', '2', '3', '+'],
+    ['±', '0', '.', '=']
+  ].flat();
 
   return (
     <section className={styles.Keyboard}>
