@@ -28,10 +28,6 @@ Button:active {
   background: var(--color-key-operator);
 }
 
-.HelperOperator {
-  background: var(--color-key-number);
-}
-
 .Equal {
   background: var(--color-key-equal);
 }
