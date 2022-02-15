@@ -72,7 +72,7 @@ const Keyboard = ({
     setDisplayValue(displayValue.substring(0, displayValue.length - 1));
   };
 
-  const keywordButtons = [
+  const keyboardButtons = [
     ['C', '⌫', '%', '÷'],
     ['7', '8', '9', 'x'],
     ['4', '5', '6', '-'],
