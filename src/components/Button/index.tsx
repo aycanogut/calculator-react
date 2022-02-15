@@ -5,7 +5,7 @@ import styles from './Button.module.css';
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   value: string;
-  variant: string;
+  variant?: string;
 }
 
 interface variantProps {
@@ -15,10 +15,11 @@ interface variantProps {
 const variants: variantProps = {
   number: styles.Number,
   operator: styles.Operator,
+  helper: styles.Number,
   equal: styles.Equal
 };
 
-const Button = ({ value, variant, ...props }: ButtonProps) => {
+const Button = ({ value, variant = 'default', ...props }: ButtonProps) => {
   return (
     <button className={cx(styles.Button, variants[variant])} type="button" {...props}>
       {value}
