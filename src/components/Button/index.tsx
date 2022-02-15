@@ -15,7 +15,7 @@ interface variantProps {
 const variants: variantProps = {
   number: styles.Number,
   operator: styles.Operator,
-  helper: styles.HelperOperator,
+  helper: styles.Number,
   equal: styles.Equal
 };
 
