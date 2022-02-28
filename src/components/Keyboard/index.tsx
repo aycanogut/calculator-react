@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { getButtonType } from '../../utils/getButtonType';
+import { add, subtract, multiply, divide } from '../../utils/calculation';
 
 import Button from '../Button';
 
@@ -44,6 +45,32 @@ const Keyboard = ({
     }
   };
 
+  const mathCalculations = () => {
+    const operator = subDisplayValue.slice(-1);
+    const firstValue = Number(subDisplayValue.slice(0, -1));
+    const secondValue = Number(displayValue);
+    let result;
+
+    switch (operator) {
+      case '+':
+        result = add(firstValue, secondValue);
+        setDisplayValue(String(result));
+        break;
+      case '-':
+        result = subtract(firstValue, secondValue);
+        setDisplayValue(String(result));
+        break;
+      case 'x':
+        result = multiply(firstValue, secondValue);
+        setDisplayValue(String(result));
+        break;
+      case '÷':
+        result = divide(firstValue, secondValue);
+        setDisplayValue(String(result));
+        break;
+    }
+  };
+
   const handleOperator = (operatorValue: string) => {
     if (displayValue.length === 16) return;
 
@@ -54,7 +81,7 @@ const Keyboard = ({
 
     if (isEqual && displayValue && subDisplayValue) {
       setSubDisplayValue(`${subDisplayValue} ${displayValue} ${operatorValue}`);
-      setDisplayValue('');
+      mathCalculations();
     } else if (!isEqual && displayValue) {
       setSubDisplayValue(`${displayValue} ${operatorValue}`);
       setDisplayValue('');
