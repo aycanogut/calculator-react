@@ -63,7 +63,6 @@ const Keyboard = ({
         break;
       case '÷':
         result = divide(firstValue, secondValue);
-        setDisplayValue(String(result));
         break;
     }
     setDisplayValue(String(result));
