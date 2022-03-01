@@ -54,21 +54,19 @@ const Keyboard = ({
     switch (operator) {
       case '+':
         result = add(firstValue, secondValue);
-        setDisplayValue(String(result));
         break;
       case '-':
         result = subtract(firstValue, secondValue);
-        setDisplayValue(String(result));
         break;
       case 'x':
         result = multiply(firstValue, secondValue);
-        setDisplayValue(String(result));
         break;
       case '÷':
         result = divide(firstValue, secondValue);
         setDisplayValue(String(result));
         break;
     }
+    setDisplayValue(String(result));
   };
 
   const handleOperator = (operatorValue: string) => {
