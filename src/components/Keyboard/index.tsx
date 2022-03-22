@@ -33,6 +33,15 @@ const Keyboard = ({
     } else if (buttonType === 'operator' || buttonType === 'equal') {
       handleOperator(inputValue);
     }
+
+    if (displayValue && subDisplayValue.includes('=') && buttonType === 'number') {
+      setSubDisplayValue('');
+      if (displayValue !== '0') {
+        setDisplayValue(inputValue);
+      } else if (displayValue === '0') {
+        setDisplayValue(displayValue.substring(1).concat(inputValue));
+      }
+    }
   };
 
   const updateDisplay = (inputValue: string) => {
