@@ -1,6 +1,6 @@
 import React from 'react';
 
-import History from '../History';
+import History, { IHistoryProps } from '../History';
 
 import '../../styles/global.css';
 import styles from './History.module.css';
@@ -10,8 +10,8 @@ export default {
   component: History
 };
 
-export const HistoryStory = () => (
+export const HistoryStory = (args: IHistoryProps) => (
   <div className={styles.HistoryWrapper}>
-    <History />
+    <History {...args} />
   </div>
 );
