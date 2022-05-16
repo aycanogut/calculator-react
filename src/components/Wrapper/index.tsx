@@ -25,6 +25,7 @@ const Wrapper = () => {
           setDisplayValue={setDisplayValue}
           subDisplayValue={subDisplayValue}
           setSubDisplayValue={setSubDisplayValue}
+          setHistory={setHistory}
         />
       ) : (
         <History history={history} setHistory={setHistory} />

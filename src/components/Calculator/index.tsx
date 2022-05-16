@@ -10,13 +10,15 @@ export interface ICalculatorProps {
   setDisplayValue: Function;
   subDisplayValue: string;
   setSubDisplayValue: Function;
+  setHistory: Function;
 }
 
 const Calculator = ({
   displayValue,
   setDisplayValue,
   subDisplayValue,
-  setSubDisplayValue
+  setSubDisplayValue,
+  setHistory
 }: ICalculatorProps) => {
   return (
     <div className={styles.Calculator}>
@@ -26,6 +28,7 @@ const Calculator = ({
         setDisplayValue={setDisplayValue}
         subDisplayValue={subDisplayValue}
         setSubDisplayValue={setSubDisplayValue}
+        setHistory={setHistory}
       />
     </div>
   );

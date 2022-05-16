@@ -12,13 +12,15 @@ export interface IKeyboardProps {
   setDisplayValue: Function;
   subDisplayValue: string;
   setSubDisplayValue: Function;
+  setHistory: Function;
 }
 
 const Keyboard = ({
   displayValue,
   setDisplayValue,
   subDisplayValue,
-  setSubDisplayValue
+  setSubDisplayValue,
+  setHistory
 }: IKeyboardProps) => {
   const handleClick = (e: any) => {
     const inputValue = e.target.textContent;
@@ -97,6 +99,8 @@ const Keyboard = ({
     } else if (!isEqual && !displayValue && subDisplayValue) {
       setSubDisplayValue(subDisplayValue.slice(0, -1) + operatorValue);
     }
+
+    setHistory([{ first: 1, operator: '+', second: 2, result: 3 }]); // dummy data (will match the calculations)
   };
 
   const clearDisplay = () => {
