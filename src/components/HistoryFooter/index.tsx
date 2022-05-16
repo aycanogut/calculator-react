@@ -3,11 +3,11 @@ import Icon from '../Icon';
 
 import styles from './HistoryFooter.module.css';
 
-export interface HistoryFooterProps {
+export interface IHistoryFooterProps {
   setHistory: Function;
 }
 
-const HistoryFooter = ({ setHistory }: HistoryFooterProps) => {
+const HistoryFooter = ({ setHistory }: IHistoryFooterProps) => {
   const clearHistory: MouseEventHandler = () => {
     setHistory([]);
   };

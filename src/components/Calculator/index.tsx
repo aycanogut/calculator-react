@@ -5,7 +5,7 @@ import Buttons from '../Keyboard';
 
 import styles from './Calculator.module.css';
 
-export interface DisplayValues {
+export interface ICalculatorProps {
   displayValue: string;
   setDisplayValue: Function;
   subDisplayValue: string;
@@ -17,7 +17,7 @@ const Calculator = ({
   setDisplayValue,
   subDisplayValue,
   setSubDisplayValue
-}: DisplayValues) => {
+}: ICalculatorProps) => {
   return (
     <div className={styles.Calculator}>
       <Screen displayValue={displayValue} subDisplayValue={subDisplayValue} />

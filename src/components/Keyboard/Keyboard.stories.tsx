@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { DisplayValues } from './index';
+import { IKeyboardProps } from './index';
 
 import Keyboard from './index';
 
@@ -12,7 +12,7 @@ export default {
   component: Keyboard
 };
 
-export const KeyboardStory = (args: DisplayValues) => (
+export const KeyboardStory = (args: IKeyboardProps) => (
   <div className={styles.KeyboardStory}>
     <Keyboard {...args} />
   </div>
