@@ -14,6 +14,7 @@ const Wrapper = () => {
 
   const [displayValue, setDisplayValue] = useState('');
   const [subDisplayValue, setSubDisplayValue] = useState('');
+  const [history, setHistory] = useState<any>([]);
 
   return (
     <div className={styles.Wrapper}>
@@ -26,7 +27,7 @@ const Wrapper = () => {
           setSubDisplayValue={setSubDisplayValue}
         />
       ) : (
-        <History />
+        <History history={history} setHistory={setHistory} />
       )}
     </div>
   );
