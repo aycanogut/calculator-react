@@ -7,19 +7,21 @@ import Button from '../Button';
 
 import styles from './Keyboard.module.css';
 
-export interface DisplayValues {
+export interface IKeyboardProps {
   displayValue: string;
   setDisplayValue: Function;
   subDisplayValue: string;
   setSubDisplayValue: Function;
+  setHistory: Function;
 }
 
 const Keyboard = ({
   displayValue,
   setDisplayValue,
   subDisplayValue,
-  setSubDisplayValue
-}: DisplayValues) => {
+  setSubDisplayValue,
+  setHistory
+}: IKeyboardProps) => {
   const handleClick = (e: any) => {
     const inputValue = e.target.textContent;
     const buttonType = getButtonType(inputValue);
@@ -32,6 +34,15 @@ const Keyboard = ({
       updateDisplay(inputValue);
     } else if (buttonType === 'operator' || buttonType === 'equal') {
       handleOperator(inputValue);
+    }
+
+    if (displayValue && subDisplayValue.includes('=') && buttonType === 'number') {
+      setSubDisplayValue('');
+      if (displayValue !== '0') {
+        setDisplayValue(inputValue);
+      } else if (displayValue === '0') {
+        setDisplayValue(displayValue.substring(1).concat(inputValue));
+      }
     }
   };
 
@@ -73,8 +84,11 @@ const Keyboard = ({
 
     const isEqual = operatorValue === '=';
 
-    if (!isEqual && displayValue && subDisplayValue) return;
     if (!isEqual && subDisplayValue.includes('=')) return;
+
+    if (!isEqual && displayValue && subDisplayValue.includes('=')) {
+      console.log('test');
+    }
 
     if (isEqual && displayValue && subDisplayValue) {
       setSubDisplayValue(`${subDisplayValue} ${displayValue} ${operatorValue}`);
@@ -82,9 +96,11 @@ const Keyboard = ({
     } else if (!isEqual && displayValue) {
       setSubDisplayValue(`${displayValue} ${operatorValue}`);
       setDisplayValue('');
-    } else if (subDisplayValue && !displayValue && !isEqual) {
+    } else if (!isEqual && !displayValue && subDisplayValue) {
       setSubDisplayValue(subDisplayValue.slice(0, -1) + operatorValue);
     }
+
+    setHistory([{ first: 1, operator: '+', second: 2, result: 3 }]); // dummy data (will match the calculations)
   };
 
   const clearDisplay = () => {

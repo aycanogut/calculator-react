@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Display, { DisplayProps } from './index';
+import Display, { IDisplayProps } from './index';
 
 import '../../styles/global.css';
 
@@ -9,4 +9,4 @@ export default {
   component: Display
 };
 
-export const DisplayStory = (args: DisplayProps) => <Display {...args} />;
+export const DisplayStory = (args: IDisplayProps) => <Display {...args} />;

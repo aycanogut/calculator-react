@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import HistoryItem from '../HistoryItem';
 import HistoryFooter from '../HistoryFooter';
 
 import styles from './History.module.css';
 
-const History = () => {
-  const [history, setHistory] = useState([
-    { first: 1, operator: '+', second: 3, result: 2 } // hard coded dummy data
-  ]);
+export interface IHistoryProps {
+  history: [];
+  setHistory: Function;
+}
 
+const History = ({ history, setHistory }: IHistoryProps) => {
   return (
     <section className={styles.History}>
       <div className={styles.Histories}>

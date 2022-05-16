@@ -1,6 +1,6 @@
 import React from 'react';
 
-import HistoryFooter, { HistoryFooterProps } from '../HistoryFooter';
+import HistoryFooter, { IHistoryFooterProps } from '../HistoryFooter';
 
 import '../../styles/global.css';
 
@@ -9,4 +9,4 @@ export default {
   component: HistoryFooter
 };
 
-export const HistoryFooterStory = (args: HistoryFooterProps) => <HistoryFooter {...args} />;
+export const HistoryFooterStory = (args: IHistoryFooterProps) => <HistoryFooter {...args} />;

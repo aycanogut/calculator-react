@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Calculator, { DisplayValues } from '../Calculator';
+import Calculator, { ICalculatorProps } from '../Calculator';
 
 import styles from './Calculator.module.css';
 import '../../styles/global.css';
@@ -10,7 +10,7 @@ export default {
   component: Calculator
 };
 
-export const CalculatorStory = (args: DisplayValues) => (
+export const CalculatorStory = (args: ICalculatorProps) => (
   <div className={styles.CalculatorStory}>
     <Calculator {...args} />
   </div>
