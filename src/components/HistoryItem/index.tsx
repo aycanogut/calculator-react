@@ -1,12 +1,12 @@
-import React from 'react';
+import React from 'react'
 
-import styles from './HistoryItem.module.css';
+import styles from './HistoryItem.module.css'
 
 export interface IHistoryItemProps {
-  first: number;
-  operator: string;
-  second: number;
-  result: number;
+  first: number
+  operator: string
+  second: number
+  result: number
 }
 
 const HistoryItem = ({ first, operator, second, result }: IHistoryItemProps) => {
@@ -20,7 +20,7 @@ const HistoryItem = ({ first, operator, second, result }: IHistoryItemProps) => 
       </div>
       <div className={styles.Result}>{result}</div>
     </div>
-  );
-};
+  )
+}
 
-export default HistoryItem;
+export default HistoryItem

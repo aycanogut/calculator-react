@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-import HistoryItem from '../HistoryItem';
-import HistoryFooter from '../HistoryFooter';
+import HistoryItem from '../HistoryItem'
+import HistoryFooter from '../HistoryFooter'
 
-import styles from './History.module.css';
+import styles from './History.module.css'
 
 export interface IHistoryProps {
-  history: [];
-  setHistory: Function;
+  history: []
+  setHistory: Function
 }
 
 const History = ({ history, setHistory }: IHistoryProps) => {
@@ -20,7 +20,7 @@ const History = ({ history, setHistory }: IHistoryProps) => {
       </div>
       <HistoryFooter setHistory={setHistory} />
     </section>
-  );
-};
+  )
+}
 
-export default History;
+export default History

@@ -1,16 +1,16 @@
-import React from 'react';
+import React from 'react'
 
-import Screen from '../Screen';
-import Buttons from '../Keyboard';
+import Screen from '../Screen'
+import Buttons from '../Keyboard'
 
-import styles from './Calculator.module.css';
+import styles from './Calculator.module.css'
 
 export interface ICalculatorProps {
-  displayValue: string;
-  setDisplayValue: Function;
-  subDisplayValue: string;
-  setSubDisplayValue: Function;
-  setHistory: Function;
+  displayValue: string
+  setDisplayValue: Function
+  subDisplayValue: string
+  setSubDisplayValue: Function
+  setHistory: Function
 }
 
 const Calculator = ({
@@ -31,7 +31,7 @@ const Calculator = ({
         setHistory={setHistory}
       />
     </div>
-  );
-};
+  )
+}
 
-export default Calculator;
+export default Calculator

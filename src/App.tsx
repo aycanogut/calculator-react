@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-import Wrapper from './components/Wrapper';
+import Wrapper from './components/Wrapper'
 
 function App() {
-  return <Wrapper />;
+  return <Wrapper />
 }
 
-export default App;
+export default App
