@@ -74,7 +74,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-storybook": "^0.5.5",
     "prettier": "^2.5.1",
-    "webpack": "^5.65.0"
+    "webpack": "^5.76.0"
   },
   "resolutions": {
     "mini-css-extract-plugin": "~2.4.5"
