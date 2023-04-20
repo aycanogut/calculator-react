@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-import { LayoutTypes } from '../../constant';
+import { LayoutTypes } from '../../constant'
 
-import Header from '../Header';
-import Calculator from '../Calculator';
-import History from '../History';
+import Header from '../Header'
+import Calculator from '../Calculator'
+import History from '../History'
 
-import styles from './Wrapper.module.css';
+import styles from './Wrapper.module.css'
 
 const Wrapper = () => {
-  const [view, setView] = useState(LayoutTypes.Calculator);
-  const isCalculator = view === LayoutTypes.Calculator;
+  const [view, setView] = useState(LayoutTypes.Calculator)
+  const isCalculator = view === LayoutTypes.Calculator
 
-  const [displayValue, setDisplayValue] = useState('');
-  const [subDisplayValue, setSubDisplayValue] = useState('');
-  const [history, setHistory] = useState<any>([]);
+  const [displayValue, setDisplayValue] = useState('')
+  const [subDisplayValue, setSubDisplayValue] = useState('')
+  const [history, setHistory] = useState<any>([])
 
   return (
     <div className={styles.Wrapper}>
@@ -31,7 +31,7 @@ const Wrapper = () => {
         <History history={history} setHistory={setHistory} />
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Wrapper;
+export default Wrapper

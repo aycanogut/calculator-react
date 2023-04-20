@@ -1,18 +1,18 @@
-import React from 'react';
+import React from 'react'
 
-import { getButtonType } from '../../utils/getButtonType';
-import { add, subtract, multiply, divide } from '../../utils/calculation';
+import { getButtonType } from '../../utils/getButtonType'
+import { add, subtract, multiply, divide } from '../../utils/calculation'
 
-import Button from '../Button';
+import Button from '../Button'
 
-import styles from './Keyboard.module.css';
+import styles from './Keyboard.module.css'
 
 export interface IKeyboardProps {
-  displayValue: string;
-  setDisplayValue: Function;
-  subDisplayValue: string;
-  setSubDisplayValue: Function;
-  setHistory: Function;
+  displayValue: string
+  setDisplayValue: Function
+  subDisplayValue: string
+  setSubDisplayValue: Function
+  setHistory: Function
 }
 
 const Keyboard = ({
@@ -23,94 +23,94 @@ const Keyboard = ({
   setHistory
 }: IKeyboardProps) => {
   const handleClick = (e: any) => {
-    const inputValue = e.target.textContent;
-    const buttonType = getButtonType(inputValue);
+    const inputValue = e.target.textContent
+    const buttonType = getButtonType(inputValue)
 
     if (inputValue === 'C') {
-      clearDisplay();
+      clearDisplay()
     } else if (inputValue === '⌫') {
-      removeLastValue();
+      removeLastValue()
     } else if (buttonType === 'number') {
-      updateDisplay(inputValue);
+      updateDisplay(inputValue)
     } else if (buttonType === 'operator' || buttonType === 'equal') {
-      handleOperator(inputValue);
+      handleOperator(inputValue)
     }
 
     if (displayValue && subDisplayValue.includes('=') && buttonType === 'number') {
-      setSubDisplayValue('');
+      setSubDisplayValue('')
       if (displayValue !== '0') {
-        setDisplayValue(inputValue);
+        setDisplayValue(inputValue)
       } else if (displayValue === '0') {
-        setDisplayValue(displayValue.substring(1).concat(inputValue));
+        setDisplayValue(displayValue.substring(1).concat(inputValue))
       }
     }
-  };
+  }
 
   const updateDisplay = (inputValue: string) => {
-    if (displayValue.length === 16) return;
+    if (displayValue.length === 16) return
 
     if (!displayValue) {
-      setDisplayValue(inputValue);
+      setDisplayValue(inputValue)
     } else {
-      setDisplayValue(displayValue.concat(inputValue));
+      setDisplayValue(displayValue.concat(inputValue))
     }
-  };
+  }
 
   const mathCalculations = () => {
-    const operator = subDisplayValue.slice(-1);
-    const firstValue = Number(subDisplayValue.slice(0, -1));
-    const secondValue = Number(displayValue);
-    let result;
+    const operator = subDisplayValue.slice(-1)
+    const firstValue = Number(subDisplayValue.slice(0, -1))
+    const secondValue = Number(displayValue)
+    let result
 
     switch (operator) {
       case '+':
-        result = add(firstValue, secondValue);
-        break;
+        result = add(firstValue, secondValue)
+        break
       case '-':
-        result = subtract(firstValue, secondValue);
-        break;
+        result = subtract(firstValue, secondValue)
+        break
       case 'x':
-        result = multiply(firstValue, secondValue);
-        break;
+        result = multiply(firstValue, secondValue)
+        break
       case '÷':
-        result = divide(firstValue, secondValue);
-        break;
+        result = divide(firstValue, secondValue)
+        break
     }
-    setDisplayValue(String(result));
-  };
+    setDisplayValue(String(result))
+  }
 
   const handleOperator = (operatorValue: string) => {
-    if (displayValue.length === 16) return;
+    if (displayValue.length === 16) return
 
-    const isEqual = operatorValue === '=';
+    const isEqual = operatorValue === '='
 
-    if (!isEqual && subDisplayValue.includes('=')) return;
+    if (!isEqual && subDisplayValue.includes('=')) return
 
     if (!isEqual && displayValue && subDisplayValue.includes('=')) {
-      console.log('test');
+      console.log('test')
     }
 
     if (isEqual && displayValue && subDisplayValue) {
-      setSubDisplayValue(`${subDisplayValue} ${displayValue} ${operatorValue}`);
-      mathCalculations();
+      setSubDisplayValue(`${subDisplayValue} ${displayValue} ${operatorValue}`)
+      mathCalculations()
     } else if (!isEqual && displayValue) {
-      setSubDisplayValue(`${displayValue} ${operatorValue}`);
-      setDisplayValue('');
+      setSubDisplayValue(`${displayValue} ${operatorValue}`)
+      setDisplayValue('')
     } else if (!isEqual && !displayValue && subDisplayValue) {
-      setSubDisplayValue(subDisplayValue.slice(0, -1) + operatorValue);
+      setSubDisplayValue(subDisplayValue.slice(0, -1) + operatorValue)
     }
 
-    setHistory([{ first: 1, operator: '+', second: 2, result: 3 }]); // dummy data (will match the calculations)
-  };
+    setHistory([{ first: 1, operator: '+', second: 2, result: 3 }]) // dummy data (will match the calculations)
+  }
 
   const clearDisplay = () => {
-    setDisplayValue('');
-    setSubDisplayValue('');
-  };
+    setDisplayValue('')
+    setSubDisplayValue('')
+  }
 
   const removeLastValue = () => {
-    setDisplayValue(displayValue.substring(0, displayValue.length - 1));
-  };
+    setDisplayValue(displayValue.substring(0, displayValue.length - 1))
+  }
 
   const keyboardButtons = [
     ['C', '⌫', '%', '÷'],
@@ -118,7 +118,7 @@ const Keyboard = ({
     ['4', '5', '6', '-'],
     ['1', '2', '3', '+'],
     ['±', '0', '.', '=']
-  ].flat();
+  ].flat()
 
   return (
     <section className={styles.Keyboard}>
@@ -126,7 +126,7 @@ const Keyboard = ({
         <Button key={val} variant={getButtonType(val)} value={val} onClick={handleClick} />
       ))}
     </section>
-  );
-};
+  )
+}
 
-export default Keyboard;
+export default Keyboard

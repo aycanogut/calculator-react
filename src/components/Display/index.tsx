@@ -1,15 +1,15 @@
-import React from 'react';
-import cx from 'classnames';
+import React from 'react'
+import cx from 'classnames'
 
-import styles from './Display.module.css';
+import styles from './Display.module.css'
 
 export interface IDisplayProps extends React.HTMLAttributes<HTMLDivElement> {
-  displayValue: string;
-  subDisplayValue: string;
+  displayValue: string
+  subDisplayValue: string
 }
 
 const Display = ({ displayValue, subDisplayValue }: IDisplayProps) => {
-  const isSmallFont = displayValue.length > 10;
+  const isSmallFont = displayValue.length > 10
 
   return (
     <section className={styles.Display}>
@@ -21,7 +21,7 @@ const Display = ({ displayValue, subDisplayValue }: IDisplayProps) => {
         {displayValue || '0'}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Display;
+export default Display
