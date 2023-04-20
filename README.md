@@ -8,10 +8,8 @@ This is a React and TypeScript-based clone of the Windows 10 calculator.
 - [Table of contents](#table-of-contents)
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
   - [Links](#links)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
 - [Author](#author)
 
 ## Overview
@@ -22,10 +20,6 @@ Users should be able to:
 
 - Do basic math calculations
 - See the last 3 calculation
-
-### Screenshot
-
-will fill
 
 ### Links
 
@@ -42,10 +36,6 @@ will fill
 - [Prettier](https://prettier.io/)
 - [React Icomoon](https://github.com/aykutkardas/react-icomoon)
 - [classnames](https://github.com/JedWatson/classnames)
-
-### What I learned
-
-will fill
 
 ## Author
 
