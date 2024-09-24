@@ -1,6 +1,6 @@
 import React from 'react'
 
-import HistoryItem from '../HistoryItem'
+import HistoryItem, { IHistoryItemProps } from '../HistoryItem'
 import HistoryFooter from '../HistoryFooter'
 
 import styles from './History.module.css'
@@ -14,7 +14,7 @@ const History = ({ history, setHistory }: IHistoryProps) => {
   return (
     <section className={styles.History}>
       <div className={styles.Histories}>
-        {history.map((item, index) => (
+        {history.map((item: IHistoryItemProps, index: number) => (
           <HistoryItem key={index} {...item} />
         ))}
       </div>

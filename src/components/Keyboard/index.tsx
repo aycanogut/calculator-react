@@ -122,7 +122,7 @@ const Keyboard = ({
 
   return (
     <section className={styles.Keyboard}>
-      {keyboardButtons.map((val) => (
+      {keyboardButtons.map((val: string) => (
         <Button key={val} variant={getButtonType(val)} value={val} onClick={handleClick} />
       ))}
     </section>
