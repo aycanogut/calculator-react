@@ -31,7 +31,6 @@ Users should be able to:
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [styled-components](https://styled-components.com/)
-- [StoryBook](https://storybook.js.org/)
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 - [React Icomoon](https://github.com/aykutkardas/react-icomoon)
