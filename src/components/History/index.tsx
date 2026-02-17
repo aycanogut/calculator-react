@@ -1,26 +1,27 @@
-import React from 'react'
+import type { Dispatch, SetStateAction } from 'react';
 
-import HistoryItem, { IHistoryItemProps } from '../HistoryItem'
-import HistoryFooter from '../HistoryFooter'
+import Footer from './Footer';
+import Item, { type ItemProps } from './Item';
 
-import styles from './History.module.css'
-
-export interface IHistoryProps {
-  history: []
-  setHistory: Function
+export interface HistoryProps {
+  history: ItemProps[];
+  setHistory: Dispatch<SetStateAction<ItemProps[]>>;
 }
 
-const History = ({ history, setHistory }: IHistoryProps) => {
+function History({ history, setHistory }: HistoryProps) {
   return (
-    <section className={styles.History}>
-      <div className={styles.Histories}>
-        {history.map((item: IHistoryItemProps, index: number) => (
-          <HistoryItem key={index} {...item} />
+    <section className="flex size-full flex-col justify-around">
+      <div className="flex flex-col">
+        {history.map((item: ItemProps, index: number) => (
+          <Item
+            key={index}
+            {...item}
+          />
         ))}
       </div>
-      <HistoryFooter setHistory={setHistory} />
+      <Footer setHistory={setHistory} />
     </section>
-  )
+  );
 }
 
-export default History
+export default History;
