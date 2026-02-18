@@ -1,30 +1,24 @@
-import React, { HTMLAttributes } from 'react'
-import cx from 'classnames'
+import { type ButtonHTMLAttributes } from 'react';
 
-import styles from './Button.module.css'
+import buttonVariants, { type ButtonVariantProps } from './variants';
 
-export interface IButtonProps extends HTMLAttributes<HTMLButtonElement> {
-  value: string
-  variant?: string
-}
+import cn from '@/utils/cn';
 
-interface IVariantProps {
-  [key: string]: string
-}
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
+  ButtonVariantProps & {
+    value: string;
+  };
 
-const variants: IVariantProps = {
-  number: styles.Number,
-  operator: styles.Operator,
-  helper: styles.Number,
-  equal: styles.Equal
-}
-
-const Button = ({ value, variant = 'default', ...props }: IButtonProps) => {
+function Button({ value, variant, ...props }: ButtonProps) {
   return (
-    <button className={cx(styles.Button, variants[variant])} type="button" {...props}>
+    <button
+      className={cn(buttonVariants({ variant }))}
+      type="button"
+      {...props}
+    >
       {value}
     </button>
-  )
+  );
 }
 
-export default Button
+export default Button;
