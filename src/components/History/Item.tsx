@@ -5,7 +5,7 @@ export interface ItemProps {
   result: number;
 }
 
-function HistoryItem({ first, operator, second, result }: ItemProps) {
+function Item({ first, operator, second, result }: ItemProps) {
   return (
     <div className="ml-auto flex flex-col p-2.5">
       <div className="text-text-secondary">
@@ -19,4 +19,4 @@ function HistoryItem({ first, operator, second, result }: ItemProps) {
   );
 }
 
-export default HistoryItem;
+export default Item;
