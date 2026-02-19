@@ -2,13 +2,13 @@ import type { MouseEventHandler, Dispatch, SetStateAction } from 'react';
 
 import type { ItemProps } from './Item';
 
-import Icon from '../Icon';
+import Icon from '@/components/Icon';
 
-export interface HistoryFooterProps {
+export interface FooterProps {
   setHistory: Dispatch<SetStateAction<ItemProps[]>>;
 }
 
-function HistoryFooter({ setHistory }: HistoryFooterProps) {
+function Footer({ setHistory }: FooterProps) {
   const clearHistory: MouseEventHandler = () => {
     setHistory([]);
   };
@@ -23,4 +23,4 @@ function HistoryFooter({ setHistory }: HistoryFooterProps) {
   );
 }
 
-export default HistoryFooter;
+export default Footer;
