@@ -17,96 +17,117 @@ export interface KeyboardProps {
 
 const MAX_DISPLAY_LENGTH = 16;
 
+function calculateResult(subDisplay: string, display: string): number {
+  const parts = subDisplay.trim().split(' ');
+  const operator = parts[parts.length - 1];
+  const firstValue = Number(parts[0]);
+  const secondValue = Number(display);
+
+  switch (operator) {
+    case '+':
+      return add(firstValue, secondValue);
+    case '-':
+      return subtract(firstValue, secondValue);
+    case 'x':
+      return multiply(firstValue, secondValue);
+    case '÷':
+      return divide(firstValue, secondValue);
+    default:
+      return secondValue;
+  }
+}
+
 function Keyboard({ displayValue, setDisplayValue, subDisplayValue, setSubDisplayValue, setHistory }: KeyboardProps) {
+  const isAfterEqual = subDisplayValue.endsWith('=');
+
+  const handleNumber = (inputValue: string) => {
+    if (isAfterEqual) {
+      setSubDisplayValue('');
+      setDisplayValue(inputValue === '0' ? '' : inputValue);
+      return;
+    }
+
+    if (displayValue.length >= MAX_DISPLAY_LENGTH) return;
+
+    if (displayValue === '0') {
+      setDisplayValue(inputValue);
+      return;
+    }
+
+    setDisplayValue(displayValue + inputValue);
+  };
+
+  const handleOperator = (operatorValue: string) => {
+    const isEqual = operatorValue === '=';
+
+    if (isEqual) {
+      if (isAfterEqual || !subDisplayValue || !displayValue) return;
+
+      const result = calculateResult(subDisplayValue, displayValue);
+      const parts = subDisplayValue.trim().split(' ');
+      const firstValue = Number(parts[0]);
+      const operator = parts[parts.length - 1];
+
+      setSubDisplayValue(`${subDisplayValue} ${displayValue} =`);
+      setDisplayValue(String(result));
+      setHistory(prev => [{ first: firstValue, operator, second: Number(displayValue), result }, ...prev]);
+      return;
+    }
+
+    if (operatorValue === '%') {
+      if (!displayValue) return;
+      setDisplayValue(String(Number(displayValue) / 100));
+      return;
+    }
+
+    if (isAfterEqual) {
+      setSubDisplayValue(`${displayValue} ${operatorValue}`);
+      setDisplayValue('');
+      return;
+    }
+
+    if (displayValue) {
+      setSubDisplayValue(`${displayValue} ${operatorValue}`);
+      setDisplayValue('');
+    } else if (subDisplayValue) {
+      const parts = subDisplayValue.trim().split(' ');
+      parts[parts.length - 1] = operatorValue;
+      setSubDisplayValue(parts.join(' '));
+    }
+  };
+
+  const handleHelper = (inputValue: string) => {
+    if (inputValue === '±') {
+      if (!displayValue || displayValue === '0') return;
+      setDisplayValue(displayValue.startsWith('-') ? displayValue.slice(1) : `-${displayValue}`);
+    } else if (inputValue === '.') {
+      if (displayValue.includes('.')) return;
+      setDisplayValue((displayValue || '0') + '.');
+    }
+  };
+
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     const inputValue = e.currentTarget.textContent ?? '';
     const buttonType = getButtonType(inputValue);
 
     if (inputValue === 'C') {
-      clearDisplay();
-    } else if (inputValue === '⌫') {
-      removeLastValue();
-    } else if (buttonType === 'number') {
-      updateDisplay(inputValue);
+      setDisplayValue('');
+      setSubDisplayValue('');
+      return;
+    }
+
+    if (inputValue === '⌫') {
+      if (!isAfterEqual) setDisplayValue(displayValue.slice(0, -1));
+      return;
+    }
+
+    if (buttonType === 'number') {
+      handleNumber(inputValue);
     } else if (buttonType === 'operator' || buttonType === 'equal') {
       handleOperator(inputValue);
+    } else if (buttonType === 'helper') {
+      handleHelper(inputValue);
     }
-
-    if (displayValue && subDisplayValue.includes('=') && buttonType === 'number') {
-      setSubDisplayValue('');
-      if (displayValue !== '0') {
-        setDisplayValue(inputValue);
-      } else if (displayValue === '0') {
-        setDisplayValue(displayValue.substring(1).concat(inputValue));
-      }
-    }
-  };
-
-  const updateDisplay = (inputValue: string) => {
-    if (displayValue.length === MAX_DISPLAY_LENGTH) return;
-
-    if (!displayValue) {
-      setDisplayValue(inputValue);
-    } else {
-      setDisplayValue(displayValue.concat(inputValue));
-    }
-  };
-
-  const mathCalculations = () => {
-    const operator = subDisplayValue.slice(-1);
-    const firstValue = Number(subDisplayValue.slice(0, -1));
-    const secondValue = Number(displayValue);
-    let result;
-
-    switch (operator) {
-      case '+':
-        result = add(firstValue, secondValue);
-        break;
-      case '-':
-        result = subtract(firstValue, secondValue);
-        break;
-      case 'x':
-        result = multiply(firstValue, secondValue);
-        break;
-      case '÷':
-        result = divide(firstValue, secondValue);
-        break;
-    }
-    setDisplayValue(String(result));
-  };
-
-  const handleOperator = (operatorValue: string) => {
-    if (displayValue.length === MAX_DISPLAY_LENGTH) return;
-
-    const isEqual = operatorValue === '=';
-
-    if (!isEqual && subDisplayValue.includes('=')) return;
-
-    if (!isEqual && displayValue && subDisplayValue.includes('=')) {
-      // TODO: İşlem mantığı eklenecek
-    }
-
-    if (isEqual && displayValue && subDisplayValue) {
-      setSubDisplayValue(`${subDisplayValue} ${displayValue} ${operatorValue}`);
-      mathCalculations();
-    } else if (!isEqual && displayValue) {
-      setSubDisplayValue(`${displayValue} ${operatorValue}`);
-      setDisplayValue('');
-    } else if (!isEqual && !displayValue && subDisplayValue) {
-      setSubDisplayValue(subDisplayValue.slice(0, -1) + operatorValue);
-    }
-
-    // TODO: Gerçek hesaplama verisi ile history güncellenecek
-    setHistory([{ first: 1, operator: '+', second: 2, result: 3 }]); //
-  };
-
-  const clearDisplay = () => {
-    setDisplayValue('');
-    setSubDisplayValue('');
-  };
-
-  const removeLastValue = () => {
-    setDisplayValue(displayValue.substring(0, displayValue.length - 1));
   };
 
   const keyboardButtons = [
