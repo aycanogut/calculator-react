@@ -12,7 +12,7 @@ function History({ history, setHistory }: HistoryProps) {
   return (
     <section className="flex size-full flex-col justify-around">
       <div className="flex flex-col">
-        {history.map((item: ItemProps, index: number) => (
+        {history.slice(0, 3).map((item: ItemProps, index: number) => (
           <Item
             key={index}
             {...item}

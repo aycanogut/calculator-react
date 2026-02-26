@@ -8,9 +8,10 @@ import type { LayoutType } from '@/constants';
 interface HeaderProps {
   view: LayoutType;
   setView: (view: LayoutType) => void;
+  hasHistory: boolean;
 }
 
-function Header({ view, setView }: HeaderProps) {
+function Header({ view, setView, hasHistory }: HeaderProps) {
   const handleClick: MouseEventHandler = () => {
     if (view === LayoutTypes.Calculator) {
       setView(LayoutTypes.History);
@@ -19,14 +20,17 @@ function Header({ view, setView }: HeaderProps) {
     }
   };
 
-  const currentIcon = view === LayoutTypes.Calculator ? 'history' : 'arrow-left';
+  const isCalculator = view === LayoutTypes.Calculator;
+  const currentIcon = isCalculator ? 'history' : 'arrow-left';
 
   return (
     <header className="m-0 mr-auto block p-1">
-      <Icon
-        name={currentIcon}
-        onClick={handleClick}
-      />
+      {(!isCalculator || hasHistory) && (
+        <Icon
+          name={currentIcon}
+          onClick={handleClick}
+        />
+      )}
     </header>
   );
 }
