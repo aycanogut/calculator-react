@@ -23,6 +23,7 @@ function Wrapper() {
       <Header
         view={view}
         setView={setView}
+        hasHistory={history.length > 0}
       />
       {isCalculator ? (
         <Calculator
