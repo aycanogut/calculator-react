@@ -30,16 +30,16 @@ Users should be able to:
 
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [styled-components](https://styled-components.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [class-variance-authority](https://cva.style/)
+- [tailwind-merge](https://github.com/dcastil/tailwind-merge)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [Vite](https://vitejs.dev/)
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
-- [React Icomoon](https://github.com/aykutkardas/react-icomoon)
-- [classnames](https://github.com/JedWatson/classnames)
 
 ## Author
 
 - [Github](https://github.com/aycanogut)
-- [LinkedIn](https://www.linkedin.com/in/aycanogut/)
 - [Medium](https://medium.com/@aycanogut)
-- [Frontend Mentor](https://www.frontendmentor.io/profile/bleedeleventh)
-- [CodePen](https://codepen.io/aycanogutt)
+- [LinkedIn](https://www.linkedin.com/in/aycanogut/)
