@@ -1,7 +1,8 @@
 {
   "name": "calculator-react",
+  "description": "A React and TypeScript-based clone of the Windows 10 calculator",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
